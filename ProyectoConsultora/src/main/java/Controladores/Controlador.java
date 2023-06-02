@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 public class Controlador implements ActionListener{
 
     public Controlador() {
+        
     }
     
     public void iniciar(){

@@ -2,21 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Clases;
+package Modelo;
 
 /**
  *
  * @author joaco
  */
-public class Empleado {
+public abstract class Empleado{
     private String nombre;
+    private String domicilio;
+    private final int DNI;
     private double sueldo;
     // Agrega otros atributos según sea necesario
     
-    public Empleado(String nombre, double sueldo) {
-        this.nombre = nombre;
-        this.sueldo = sueldo;
-    }
+
     
     // Agrega los getters y setters necesarios
+
+    public Empleado(String nombre, String domicilio, int DNI, double sueldo) {
+        this.nombre = nombre;
+        this.domicilio = domicilio;
+        this.DNI = DNI;
+        this.sueldo = sueldo;
+    }
 }

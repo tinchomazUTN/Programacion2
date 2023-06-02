@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Clases;
+package Modelo;
 
 /**
  *
@@ -10,12 +10,10 @@ package Clases;
  */
 public class Analista extends Empleado {
     private String categoria;
-    // Agrega otros atributos según sea necesario
-    
-    public Analista(String nombre, double sueldo, String categoria) {
-        super(nombre, sueldo);
+
+    public Analista(String categoria, String nombre, String domicilio, int DNI, double sueldo) {
+        super(nombre, domicilio, DNI, sueldo);
         this.categoria = categoria;
     }
-    
-    // Agrega los getters y setters necesarios
+
 }

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Clases;
+package Modelo;
 
 /**
  *
@@ -13,19 +13,25 @@ import java.util.Date;
 import java.util.List;
 
 public class Consultora {
-    private List<Empleado> empleados;
+    private List<Programador> programadores;
+    private List<Analista> analistas;
     private List<Cliente> clientes;
     // Agrega otros atributos según sea necesario
-    
-    public Consultora() {
-        empleados = new ArrayList<>();
-        clientes = new ArrayList<>();
+
+    public Consultora(List<Programador> programadores, List<Analista> analistas, List<Cliente> clientes) {
+        this.programadores = programadores;
+        this.analistas = analistas;
+        this.clientes = clientes;
     }
     
-    public void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
-    }
+   
     
+    public void agregarProgramador(Programador programador) {
+        programadores.add(programador);
+    }
+    public void agregarAnalista(Analista analista) {
+        analistas.add(analista);
+    }  
     public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
