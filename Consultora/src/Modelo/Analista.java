@@ -12,21 +12,14 @@ import java.util.ArrayList;
  */
 public class Analista extends Empleado {
     private String categoria;
-   
-    private int tiempoTrabajadoTotal;
-    
-    private int dineroTotalGanado;
-    
+
     private int [] sueldoMes= new int[12];
     private ArrayList<int[]> sueldoAnual= new ArrayList();
 
     public Analista() {
     }
-
-   
-    
-    public Analista(String categoria, String nombre, String domicilio, int DNI, double sueldo) {
-        super(nombre, domicilio, DNI, sueldo);
+    public Analista(String categoria, String nombre, String domicilio, int DNI) {
+        super(nombre, domicilio, DNI);
         this.categoria = categoria;
     }
 

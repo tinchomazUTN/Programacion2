@@ -12,11 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Programacion/UTN/Programacion2/Programacion2/Consultora/src/Controlador/Consultora.java</file>
-            <file>file:/C:/Programacion/UTN/Programacion2/Programacion2/Consultora/src/Controlador/ControladorOpcionCrear.java</file>
-            <file>file:/C:/Programacion/UTN/Programacion2/Programacion2/Consultora/src/Controlador/ControladorConsultar.java</file>
-            <file>file:/C:/Programacion/UTN/Programacion2/Programacion2/Consultora/src/Controlador/ControladorMenu.java</file>
-            <file>file:/C:/Programacion/UTN/Programacion2/Programacion2/Consultora/src/Controlador/ControladorTerminarTrabajo.java</file>
+            <file>file:/C:/Users/joaco/Desktop/proyecto/Programacion2/Consultora/src/Modelo/Empleado.java</file>
+            <file>file:/C:/Users/joaco/Desktop/proyecto/Programacion2/Consultora/src/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/joaco/Desktop/proyecto/Programacion2/Consultora/src/Vista/TerminarTrabajo.java</file>
+            <file>file:/C:/Users/joaco/Desktop/proyecto/Programacion2/Consultora/src/Modelo/Analista.java</file>
+            <file>file:/C:/Users/joaco/Desktop/proyecto/Programacion2/Consultora/src/Modelo/Consultora.java</file>
+            <file>file:/C:/Users/joaco/Desktop/proyecto/Programacion2/Consultora/src/Modelo/Programador.java</file>
         </group>
     </open-files>
 </project-private>

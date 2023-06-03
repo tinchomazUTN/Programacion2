@@ -12,15 +12,40 @@ public class Cliente {
     private String nombre;
     private String direccion;
     private double precioHora;
-    private int duracionTrabajo;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String direccion, double precioHora, int duracionTrabajo) {
+    public Cliente(String nombre, String direccion, double precioHora) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.precioHora = precioHora;
-        this.duracionTrabajo = duracionTrabajo;
+        
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public double getPrecioHora() {
+        return precioHora;
+    }
+
+    public void setPrecioHora(double precioHora) {
+        this.precioHora = precioHora;
+    }
+    
+    
 }

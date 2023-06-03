@@ -21,6 +21,7 @@ import java.awt.event.ActionListener;
  */
 public class ControladorMenu implements ActionListener{
     public Menu m;
+    public Consultora consultora = new Consultora();
     //vistas
     public Consultar consultar = new Consultar();
     public OpcionCrear opcionCrear = new OpcionCrear();
@@ -28,7 +29,7 @@ public class ControladorMenu implements ActionListener{
     public CrearEmpleado crearEmpleado = new CrearEmpleado();
     public Modificar modificar = new Modificar();
     public TerminarTrabajo terminarTrabajo= new TerminarTrabajo();
-    public Consultora consultora = new Consultora();
+
     //controladores
     public ControladorConsultar controladorConsultar = new ControladorConsultar(this);
     public ControladorOpcionCrear controladorOpcionCrear = new ControladorOpcionCrear(this);

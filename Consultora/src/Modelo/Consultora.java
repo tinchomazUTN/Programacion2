@@ -13,19 +13,25 @@ import java.util.Date;
 import java.util.List;
 
 public class Consultora {
-    private List<Programador> programadores;
-    private List<Analista> analistas;
-    private List<Cliente> clientes;
-    // Agrega otros atributos según sea necesario
+    private ArrayList<Programador> programadores= new ArrayList();
+    private ArrayList<Analista> analistas= new ArrayList();
+    private ArrayList<Cliente> clientes= new ArrayList();
 
-    public Consultora(List<Programador> programadores, List<Analista> analistas, List<Cliente> clientes) {
-        this.programadores = programadores;
-        this.analistas = analistas;
-        this.clientes = clientes;
+    public Consultora() {
     }
-    
+
+    public ArrayList<Programador> getProgramadores() {
+        return programadores;
+    }
+
+    public ArrayList<Analista> getAnalistas() {
+        return analistas;
+    }
+
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
    
-    
     public void agregarProgramador(Programador programador) {
         programadores.add(programador);
     }
@@ -36,24 +42,22 @@ public class Consultora {
         clientes.add(cliente);
     }
     
-    public double liquidacionDesde(int dia, int hasta) {
-        // Implementa la lógica para calcular la liquidación desde el día 'dia' hasta el día 'hasta'
-        double total = 0.0;
-        // ...
-        return total;
+    public double liquidacionDesde( int mes1, int año1, int mes2, int año2) {
+        // nos ingresaran dos fechas, debemos recorrer los arrays de cobros de los programadores y 
+        //sumar todos los cobros entre esas dos fechas, 
+        //luego devolver la sumatoria de la plata que han cobrado los programadores entre esas dos fechas
+        return 1;
     }
     
-    public int horasTrabajadasEn(Programador programador, Date fechaIngreso) {
-        // Implementa la lógica para calcular las horas trabajadas por un programador desde su fecha de ingreso
-        int horasTrabajadas = 0;
-        // ...
-        return horasTrabajadas;
+    public int horasTrabajadasEn(Programador programador) {
+        // devuelve total de horas trabajadas por un programador,
+        //ya tenemos esa variable dentro de cada programador
+        return 1;
     }
     
-    public Empleado empleadoMejorPago(int mes, int año) {
-        // Implementa la lógica para encontrar al empleado de mejor pago en el mes y año indicados
-        Empleado empleado = null;
-        // ...
-        return empleado;
+    public double empleadoMejorPago(int mes, int año) {
+         // nos ingresaran un mes y un año, debemos recorrer los arrays de sueldos de cada empleado }
+         //y devolver los que tienen un sueldo en ese mes y año, y de esos devolver cual es el mayor   
+        return 1;
     }
 }

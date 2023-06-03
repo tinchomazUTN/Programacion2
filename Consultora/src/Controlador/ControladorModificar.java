@@ -16,7 +16,8 @@ import java.awt.event.ActionListener;
 public class ControladorModificar implements ActionListener{
     private ControladorMenu cm;
     private Modificar vista;
-
+    
+    
     public ControladorModificar(ControladorMenu cm) {
         this.cm = cm;
         this.vista = cm.modificar;
@@ -26,6 +27,10 @@ public class ControladorModificar implements ActionListener{
         this.vista.getjComboBox3().addActionListener(this);
         this.vista.getjComboBox4().addActionListener(this);
         this.vista.getjComboBox5().addActionListener(this);
+        this.vista.getjComboBox4().addItem(null);
+        this.vista.getjComboBox4().addItem("Junior");
+        this.vista.getjComboBox4().addItem("Senior");
+        this.vista.getjComboBox4().addItem("Semi Senior");
     }
     
     @Override
@@ -43,9 +48,11 @@ public class ControladorModificar implements ActionListener{
         if(e.getSource()== this.vista.getjComboBox3()){
             
         }
+        
         if(e.getSource()== this.vista.getjComboBox4()){
             
         }
+        
         if(e.getSource()== this.vista.getjComboBox5()){
             
         }
