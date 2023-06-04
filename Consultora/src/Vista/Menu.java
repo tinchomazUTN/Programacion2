@@ -18,6 +18,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getjButton1() {
@@ -73,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButton2.setText("Añadir");
 
-        jButton3.setText("Asignar Cliente");
+        jButton3.setText("Modificar");
 
         jButton4.setText("Trabajo Terminado");
 

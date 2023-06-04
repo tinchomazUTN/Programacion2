@@ -12,11 +12,14 @@ import java.util.ArrayList;
  */
 public class Consultora {
 
-    public ArrayList<Programador> programadores = new ArrayList();
-    public ArrayList<Analista> analistas = new ArrayList();
-    public ArrayList<Cliente> clientes = new ArrayList();
+    public ArrayList<Programador> programadores;
+    public ArrayList<Analista> analistas;
+    public ArrayList<Cliente> clientes;
 
     public Consultora() {
+        programadores = new ArrayList<>();
+        analistas = new ArrayList<>();
+        clientes = new ArrayList<>();
     }
 
    public ArrayList<Programador> getProgramadores() {

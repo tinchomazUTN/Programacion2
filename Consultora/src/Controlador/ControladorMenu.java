@@ -56,6 +56,7 @@ public class ControladorMenu implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         if (e.getSource() == m.getjButton1()) {
             this.consultar.setVisible(true);
             this.m.setVisible(false);
@@ -63,14 +64,29 @@ public class ControladorMenu implements ActionListener {
             this.opcionCrear.setVisible(true);
             this.m.setVisible(false);
         } else if (e.getSource() == m.getjButton3()) {
-            for (Cliente cl : consultora.clientes) {
-                modificar.getjComboBox5().addItem(cl.getNombre());
-            }
+              modificar.getjComboBox1().removeAllItems();
+              modificar.getjComboBox2().removeAllItems();
+              modificar.getjComboBox3().removeAllItems();
+              modificar.getjComboBox4().removeAllItems();
+              modificar.getjComboBox5().removeAllItems();
+              ////////////////////////////////////////////
+              modificar.getjComboBox1().addItem(null);
+              modificar.getjComboBox2().addItem(null);
+              modificar.getjComboBox3().addItem(null);
+              modificar.getjComboBox4().addItem(null);
+              modificar.getjComboBox5().addItem(null);
+              modificar.getjComboBox4().addItem("Junior");
+              modificar.getjComboBox4().addItem("Senior");
+              modificar.getjComboBox4().addItem("Semi Senior");
             for (Programador pr : consultora.programadores) {
                 modificar.getjComboBox1().addItem(pr.getNombre());
             }
             for (Analista an : consultora.analistas) {
                 modificar.getjComboBox3().addItem(an.getNombre());
+            }
+            for (Cliente cl : consultora.clientes) {
+                modificar.getjComboBox2().addItem(cl.getNombre());
+                modificar.getjComboBox5().addItem(cl.getNombre());
             }
             this.modificar.setVisible(true);
             this.m.setVisible(false);

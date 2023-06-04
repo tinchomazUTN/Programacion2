@@ -18,6 +18,7 @@ public class CrearCliente extends javax.swing.JFrame {
      */
     public CrearCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getjButton1() {
@@ -75,6 +76,12 @@ public class CrearCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Añadir Cliente");
+
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2KeyTyped(evt);
+            }
+        });
 
         jLabel2.setText("Nombre Cliente");
 
@@ -144,6 +151,21 @@ public class CrearCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+         int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (this.getjTextField1().getText().trim().length() == 10) {
+        evt.consume();
+    }
+    }//GEN-LAST:event_jTextField2KeyTyped
 
     /**
      * @param args the command line arguments

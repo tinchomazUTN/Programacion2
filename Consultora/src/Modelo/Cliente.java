@@ -9,9 +9,9 @@ package Modelo;
  * @author joaco
  */
 public class Cliente {
-    private String nombre;
-    private String direccion;
-    private double precioHora;
+    private String nombre = "";
+    private String direccion = "";
+    private double precioHora = 0;
 
     public Cliente() {
     }
@@ -45,6 +45,11 @@ public class Cliente {
 
     public void setPrecioHora(double precioHora) {
         this.precioHora = precioHora;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nombre=" + nombre + ", precioHora=" + precioHora + '}';
     }
     
     

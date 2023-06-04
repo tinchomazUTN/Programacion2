@@ -57,5 +57,11 @@ public class Analista extends Empleado {
     public void setSueldoAnual(ArrayList<int[]> sueldoAnual) {
         this.sueldoAnual = sueldoAnual;
     }
+
+    @Override
+    public String toString() {
+        return "Analista{" + "categoria=" + categoria + super.toString() + "}";
+    }
+    
     
 }

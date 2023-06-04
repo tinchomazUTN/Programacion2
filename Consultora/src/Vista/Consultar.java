@@ -17,6 +17,7 @@ public class Consultar extends javax.swing.JFrame {
      */
     public Consultar() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getjButton1() {

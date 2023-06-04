@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author joaco
  */
 public class Programador extends Empleado {
-    private Cliente cliente;
+    private Cliente cliente = new Cliente();
     private int tiempoTrabajado=0;
 
     private int [] sueldoMes= new int[12];
@@ -67,6 +67,11 @@ public class Programador extends Empleado {
 
     public void setSueldoAnual(ArrayList<int[]> sueldoAnual) {
         this.sueldoAnual = sueldoAnual;
+    }
+
+    @Override
+    public String toString() {
+        return "Programador{"+ super.toString() + "cliente=" + cliente +'}';
     }
     
     

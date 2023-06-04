@@ -45,5 +45,10 @@ public abstract class Empleado{
     public void setDNI(int DNI) {
         this.DNI = DNI;
     }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + ", domicilio=" + domicilio + ", DNI=" + DNI + '}';
+    }
     
 }

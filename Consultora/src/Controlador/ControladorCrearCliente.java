@@ -11,6 +11,7 @@ import Vista.CrearCliente;
 import Vista.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +20,6 @@ import java.awt.event.ActionListener;
 public class ControladorCrearCliente implements ActionListener{
     private ControladorMenu cm;
     private CrearCliente vista;
-    private Cliente cliente = new Cliente();
     
     
     public ControladorCrearCliente(ControladorMenu cm) {
@@ -30,13 +30,16 @@ public class ControladorCrearCliente implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        Cliente cliente = new Cliente();
         if(e.getSource()== this.vista.getjButton1()){
-            if (!this.vista.getjTextField1().getText().equals(null) && !this.vista.getjTextField2().getText().equals(null) && !this.vista.getjTextField3().getText().equals(null) ) {
-                this.cliente.setNombre(this.vista.getjTextField1().getText());
-                this.cliente.setDireccion(this.vista.getjTextField3().getText());
-                this.cliente.setPrecioHora(Double.parseDouble(this.vista.getjTextField2().getText()));
+            if (!this.vista.getjTextField1().getText().isEmpty() && !this.vista.getjTextField2().getText().isEmpty() && !this.vista.getjTextField3().getText().isEmpty() ) {
+                cliente.setNombre(this.vista.getjTextField1().getText());
+                cliente.setDireccion(this.vista.getjTextField3().getText());
+                cliente.setPrecioHora(Double.parseDouble(this.vista.getjTextField2().getText()));
                 this.cm.consultora.agregarCliente(cliente);
-            }       
+            }else{
+                JOptionPane.showMessageDialog(vista, "Datos Vacios,volviendo al Menu");
+            }
             this.cm.m.setVisible(true);
             this.vista.setVisible(false); 
         }
