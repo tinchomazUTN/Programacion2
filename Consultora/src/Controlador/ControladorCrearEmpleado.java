@@ -35,16 +35,19 @@ public class ControladorCrearEmpleado implements ActionListener{
         if(e.getSource() == this.vista.getjButton1()){
             
             if (!this.vista.getjTextField1().getText().equals(null) && !this.vista.getjTextField2().getText().equals(null) && !this.vista.getjTextField3().getText().equals(null) ) {
-                if (this.vista.getjComboBox1().equals("Programador")) {
+                if (this.vista.getjComboBox1().getSelectedItem().toString().equals("Programador")) {
                     this.programador.setDocumento(Integer.parseInt(this.vista.getjTextField1().getText()));
                     this.programador.setDomicilio(this.vista.getjTextField2().getText());
                     this.programador.setNombre(this.vista.getjTextField3().getText());
-                   
+                    this.cm.consultora.agregarProgramador(programador);
+    
                 }
-                if (this.vista.getjComboBox1().equals("Analista")) {
+                if (this.vista.getjComboBox1().getSelectedItem().toString().equals("Analista")) {
                     this.analista.setDocumento(Integer.parseInt(this.vista.getjTextField1().getText()));
                     this.analista.setDomicilio(this.vista.getjTextField2().getText());
                     this.analista.setNombre(this.vista.getjTextField3().getText());
+                    this.cm.consultora.agregarAnalista(analista);
+ 
                 }
             }
             

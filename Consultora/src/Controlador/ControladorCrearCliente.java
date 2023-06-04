@@ -6,6 +6,7 @@ package Controlador;
 
 
 import Modelo.Cliente;
+
 import Vista.CrearCliente;
 import Vista.Menu;
 import java.awt.event.ActionEvent;
@@ -25,7 +26,6 @@ public class ControladorCrearCliente implements ActionListener{
         this.cm = cm;
         this.vista = cm.crearCliente;
         this.vista.getjButton1().addActionListener(this);
-        cm.hacercaca()
     }
     
     @Override
@@ -35,7 +35,7 @@ public class ControladorCrearCliente implements ActionListener{
                 this.cliente.setNombre(this.vista.getjTextField1().getText());
                 this.cliente.setDireccion(this.vista.getjTextField3().getText());
                 this.cliente.setPrecioHora(Double.parseDouble(this.vista.getjTextField2().getText()));
-                
+                this.cm.consultora.agregarCliente(cliente);
             }       
             this.cm.m.setVisible(true);
             this.vista.setVisible(false); 

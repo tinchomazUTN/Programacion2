@@ -4,6 +4,9 @@
  */
 package Controlador;
 
+import Modelo.Analista;
+import Modelo.Cliente;
+import Modelo.Programador;
 import Vista.Menu;
 import Vista.Modificar;
 import java.awt.event.ActionEvent;
@@ -31,6 +34,7 @@ public class ControladorModificar implements ActionListener{
         this.vista.getjComboBox4().addItem("Junior");
         this.vista.getjComboBox4().addItem("Senior");
         this.vista.getjComboBox4().addItem("Semi Senior");
+       
     }
     
     @Override
