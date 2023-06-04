@@ -13,8 +13,7 @@ import java.util.ArrayList;
 public class Analista extends Empleado {
     private String categoria;
 
-    private int [] sueldoMes= new int[12];
-    private int [] sueldoAño= new int[5];
+    private int [][] sueldoMes= new int[12][5];
 
     public Analista() {
     }
@@ -42,20 +41,19 @@ public class Analista extends Empleado {
         this.categoria = categoria;
     }
 
-    public int[] getSueldoMes() {
-        return sueldoMes;
+     public int getSueldoMes(int mes, int año) {
+        return sueldoMes[mes][año];
     }
 
-    public void setSueldoMes(int[] sueldoMes) {
-        this.sueldoMes = sueldoMes;
-    }
-
-    public int[] getSueldoAnual() {
-        return sueldoAño;
-    }
-
-    public void setSueldoAnual(int[] sueldoAnual) {
-        this.sueldoAño = sueldoAnual;
+    public void setSueldoMes(int mes ,int año) {
+        if (this.categoria.equals("Junior")) {
+            this.sueldoMes[mes][año]=500;
+        }else if(this.categoria.equals("Semi Senior")){
+            this.sueldoMes[mes][año]=1000;
+        }else if(this.categoria.equals("Senior")){
+            this.sueldoMes[mes][año]=1500;}
+       
+        System.out.println("sueldo: "+this.sueldoMes[mes][año]);
     }
 
     @Override

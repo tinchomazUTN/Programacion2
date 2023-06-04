@@ -69,7 +69,7 @@ public class Programador extends Empleado {
     
     public void aumentarHoras (int a){
         this.tiempoTrabajado+=a;
-    
+        System.out.println("tiempo trabajado "+this.tiempoTrabajado);
     }
     
 }

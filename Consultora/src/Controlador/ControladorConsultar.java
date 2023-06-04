@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.Programador;
 import Vista.Consultar;
 import Vista.Menu;
 import java.awt.event.ActionEvent;
@@ -23,6 +24,9 @@ public class ControladorConsultar implements ActionListener{
         this.cm = cm;
         this.vista = cm.consultar;
         this.vista.getjButton1().addActionListener(this);
+        this.vista.getjButton2().addActionListener(this);
+        this.vista.getjButton3().addActionListener(this);
+        this.vista.getjButton4().addActionListener(this);
         this.vista.getjComboBox1().addActionListener(this);//hay que poner los empleados
         
         this.vista.getjComboBox2().addItem(null);
@@ -50,6 +54,25 @@ public class ControladorConsultar implements ActionListener{
         if(e.getSource() == this.vista.getjButton1()){
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);
+        }
+        if(e.getSource() == this.vista.getjButton2()){
+            
+        }
+        if(e.getSource() == this.vista.getjButton3()){
+            
+        }
+        if(e.getSource() == this.vista.getjButton4()){
+            
+            for (Programador prog : this.cm.consultora.programadores) {
+                if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem())) {
+                    
+                this.vista.getjTextField1().setText(Integer.toString(prog.getTiempoTrabajado()));
+            }
+            }
+            
+        }
+        if(e.getSource() == this.vista.getjTextField1()){
+          
         }
         if(e.getSource() == this.vista.getjComboBox1()){
            
