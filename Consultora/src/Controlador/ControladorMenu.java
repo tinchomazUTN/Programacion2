@@ -58,6 +58,14 @@ public class ControladorMenu implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         if (e.getSource() == m.getjButton1()) {
+            consultar.getjComboBox1().removeAllItems();
+            consultar.getjComboBox1().addItem(null);
+            for (Programador pr : consultora.programadores) {
+                consultar.getjComboBox1().addItem(pr.getNombre());
+            }
+          
+            
+            
             this.consultar.setVisible(true);
             this.m.setVisible(false);
         } else if (e.getSource() == m.getjButton2()) {
@@ -91,6 +99,16 @@ public class ControladorMenu implements ActionListener {
             this.modificar.setVisible(true);
             this.m.setVisible(false);
         } else if (e.getSource() == m.getjButton4()) {
+            terminarTrabajo.getjComboBox1().removeAllItems();
+            terminarTrabajo.getjComboBox1().addItem(null);
+            terminarTrabajo.getjComboBox2().removeAllItems();
+            terminarTrabajo.getjComboBox2().addItem(null);
+            for (Programador pr : consultora.programadores) {
+                terminarTrabajo.getjComboBox1().addItem(pr.getNombre());
+            }
+            for (Analista an : consultora.analistas) {
+                terminarTrabajo.getjComboBox2().addItem(an.getNombre());
+            }
             this.terminarTrabajo.setVisible(true);
             this.m.setVisible(false);
         }

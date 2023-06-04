@@ -11,12 +11,12 @@ package Modelo;
 public class Cliente {
     private String nombre = "";
     private String direccion = "";
-    private double precioHora = 0;
+    private int precioHora = 0;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String direccion, double precioHora) {
+    public Cliente(String nombre, String direccion, int precioHora) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.precioHora = precioHora;
@@ -43,7 +43,7 @@ public class Cliente {
         return precioHora;
     }
 
-    public void setPrecioHora(double precioHora) {
+    public void setPrecioHora(int precioHora) {
         this.precioHora = precioHora;
     }
 

@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.Programador;
 import Vista.Menu;
 import Vista.TerminarTrabajo;
 import java.awt.event.ActionEvent;
@@ -42,6 +43,16 @@ public class ControladorTerminarTrabajo implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.vista.getjButton1()){
+            for (Programador prog : this.cm.consultora.programadores) {
+                if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem().toString())) {
+                    prog.aumentarHoras(Integer.parseInt(this.vista.getjTextField1().getText()));
+                }
+                if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem().toString())) {
+                    prog.setSueldoMes(this.vista.getjComboBox3().getSelectedIndex()-1, this.vista.getjComboBox4().getSelectedIndex()-1);
+                }
+            }
+            
+            System.out.println(this.cm.consultora.programadores.get(0).toString());
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);
         }

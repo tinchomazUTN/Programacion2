@@ -56,7 +56,7 @@ public class ControladorModificar implements ActionListener{
             if(!this.vista.getjTextField1().getText().isEmpty()){
                 for(Cliente var : this.cm.consultora.clientes){
                     if(var.getNombre().equals(this.vista.getjComboBox5().getSelectedItem())){
-                        var.setPrecioHora(Double.parseDouble(this.vista.getjTextField1().getText()));
+                        var.setPrecioHora(Integer.parseInt(this.vista.getjTextField1().getText()));
                     }
                 }
             }

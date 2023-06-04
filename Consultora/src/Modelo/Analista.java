@@ -14,7 +14,7 @@ public class Analista extends Empleado {
     private String categoria;
 
     private int [] sueldoMes= new int[12];
-    private ArrayList<int[]> sueldoAnual= new ArrayList();
+    private int [] sueldoAño= new int[5];
 
     public Analista() {
     }
@@ -50,12 +50,12 @@ public class Analista extends Empleado {
         this.sueldoMes = sueldoMes;
     }
 
-    public ArrayList<int[]> getSueldoAnual() {
-        return sueldoAnual;
+    public int[] getSueldoAnual() {
+        return sueldoAño;
     }
 
-    public void setSueldoAnual(ArrayList<int[]> sueldoAnual) {
-        this.sueldoAnual = sueldoAnual;
+    public void setSueldoAnual(int[] sueldoAnual) {
+        this.sueldoAño = sueldoAnual;
     }
 
     @Override

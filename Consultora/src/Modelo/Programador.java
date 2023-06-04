@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class Programador extends Empleado {
     private Cliente cliente = new Cliente();
     private int tiempoTrabajado=0;
-
-    private int [] sueldoMes= new int[12];
-    private ArrayList<int[]> sueldoAnual= new ArrayList();
+    
+    private int [][] sueldoMes= new int[12][5];
+    
 
     
     public Programador() {
@@ -53,27 +53,23 @@ public class Programador extends Empleado {
         this.tiempoTrabajado = tiempoTrabajado;
     }
 
-    public int[] getSueldoMes() {
-        return sueldoMes;
+    public int getSueldoMes(int mes, int año) {
+        return sueldoMes[mes][año];
     }
 
-    public void setSueldoMes(int[] sueldoMes) {
-        this.sueldoMes = sueldoMes;
-    }
-
-    public ArrayList<int[]> getSueldoAnual() {
-        return sueldoAnual;
-    }
-
-    public void setSueldoAnual(ArrayList<int[]> sueldoAnual) {
-        this.sueldoAnual = sueldoAnual;
+    public void setSueldoMes(int mes ,int año) {
+        this.sueldoMes[mes][año] = (int) (this.tiempoTrabajado * this.cliente.getPrecioHora());
+        System.out.println("sueldo: "+this.sueldoMes[mes][año]);
     }
 
     @Override
     public String toString() {
-        return "Programador{"+ super.toString() + "cliente=" + cliente +'}';
+        return "Programador{"+ super.toString() + " tiempo trabajado:"+tiempoTrabajado+"cliente=" + cliente +'}';
     }
     
+    public void aumentarHoras (int a){
+        this.tiempoTrabajado+=a;
     
+    }
     
 }
