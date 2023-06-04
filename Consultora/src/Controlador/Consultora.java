@@ -6,6 +6,7 @@
 package Controlador;
 
 import BD.Conexion;
+import Modelo.Programador;
 import Vista.Menu;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -24,11 +25,11 @@ public class Consultora {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        Conexion conexionBd = new Conexion();
+        //Conexion conexionBd = new Conexion();
         Menu m = new Menu();
         ControladorMenu controlador = new ControladorMenu(m);  
-        llenar(conexionBd.conectar(),conexionBd,controlador);
-        conexionBd.desconectar();
+        //llenar(conexionBd.conectar(),conexionBd,controlador);
+        //conexionBd.desconectar();
     }
     public static void llenar(Connection con,Conexion BD,ControladorMenu cm) throws SQLException{
         try {
@@ -36,6 +37,11 @@ public class Consultora {
             ResultSet resultado = stm.executeQuery("SELECT * FROM programador");
             
             while(resultado.next()){
+                Programador pr = new Programador();
+                pr.setNombre(resultado.getString("nombre"));
+                pr.setDomicilio(resultado.getString("domicilio"));
+                pr.setDocumento(resultado.getInt("dni"));
+                cm.consultora.programadores.add(pr);
                 System.out.println(resultado.getString("nombre") + " " + resultado.getString("domicilio")+ " " + resultado.getString("dni"));
             }
             stm.close();
