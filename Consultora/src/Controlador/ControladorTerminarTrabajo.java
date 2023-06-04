@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class ControladorTerminarTrabajo implements ActionListener{
     private ControladorMenu cm;
     private TerminarTrabajo vista;
-    String[] años = {"2021", "2022", "2023", "2024", "2025"};
+    String[] años = {"2020","2021", "2022", "2023", "2024"};
     String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};  
     public ControladorTerminarTrabajo(ControladorMenu cm) {
         this.cm = cm;

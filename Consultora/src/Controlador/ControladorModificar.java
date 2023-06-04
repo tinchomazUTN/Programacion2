@@ -39,7 +39,7 @@ public class ControladorModificar implements ActionListener{
                 for (Programador var : this.cm.consultora.programadores) {
                     for (Cliente var2 : this.cm.consultora.getClientes()) {
                         if(var2.getNombre().equals(this.vista.getjComboBox2().getSelectedItem()) 
-                           && var.getNombre().equals(this.vista.getjComboBox1().getSelectedItem())){
+                           && var.getNombre().equals(this.vista.getjComboBox1().getSelectedItem() )){
                             var.setCliente(var2);
                         }
                     }
