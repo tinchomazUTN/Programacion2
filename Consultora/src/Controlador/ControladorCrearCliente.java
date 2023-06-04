@@ -20,13 +20,13 @@ public class ControladorCrearCliente implements ActionListener{
     private CrearCliente vista;
     private Cliente cliente = new Cliente();
     
+    
     public ControladorCrearCliente(ControladorMenu cm) {
-        this.cm= cm;
+        this.cm = cm;
         this.vista = cm.crearCliente;
         this.vista.getjButton1().addActionListener(this);
-        
+        cm.hacercaca()
     }
-
     
     @Override
     public void actionPerformed(ActionEvent e) {

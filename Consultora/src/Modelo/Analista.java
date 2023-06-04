@@ -22,5 +22,40 @@ public class Analista extends Empleado {
         super(nombre, domicilio, DNI);
         this.categoria = categoria;
     }
+     public void setNombre(String nombre) {
+        super.setNombre(nombre);
+    }
+    
+    public void setDocumento(int documento) {
+        super.setDNI(documento);
+    }
+    
+    public void setDomicilio(String domicilio) {
+        super.setDomicilio(domicilio);
+    }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public int[] getSueldoMes() {
+        return sueldoMes;
+    }
+
+    public void setSueldoMes(int[] sueldoMes) {
+        this.sueldoMes = sueldoMes;
+    }
+
+    public ArrayList<int[]> getSueldoAnual() {
+        return sueldoAnual;
+    }
+
+    public void setSueldoAnual(ArrayList<int[]> sueldoAnual) {
+        this.sueldoAnual = sueldoAnual;
+    }
+    
 }

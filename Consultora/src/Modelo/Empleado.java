@@ -11,7 +11,7 @@ package Modelo;
 public abstract class Empleado{
     private String nombre;
     private String domicilio;
-    private  int DNI;
+    private  Integer DNI;
     
     public Empleado() {
     }
@@ -21,4 +21,29 @@ public abstract class Empleado{
         this.domicilio = domicilio;
         this.DNI = DNI;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public int getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
+    
 }

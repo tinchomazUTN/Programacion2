@@ -16,10 +16,10 @@ import java.awt.event.ActionListener;
  * @author Flores
  */
 public class ControladorOpcionCrear implements ActionListener{
-    private ControladorMenu cm;
-    private OpcionCrear vista;
-    private CrearEmpleado vistaEmpleado;
-    private CrearCliente vistaCliente;
+    public ControladorMenu cm;
+    public  OpcionCrear vista;
+    public  CrearEmpleado vistaEmpleado;
+    public  CrearCliente vistaCliente;
     
     public ControladorOpcionCrear(ControladorMenu cm) {
         this.cm= cm;

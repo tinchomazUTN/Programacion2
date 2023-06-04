@@ -19,9 +19,9 @@ import java.awt.event.ActionListener;
  * @author Flores
  */
 public class ControladorCrearEmpleado implements ActionListener{
-    private ControladorMenu cm;
+    public ControladorMenu cm;
     private CrearEmpleado vista;
-    private Programador progrmador= new Programador();
+    private Programador programador= new Programador();
     private Analista analista = new Analista();
     
     public ControladorCrearEmpleado(ControladorMenu cm) {
@@ -33,6 +33,23 @@ public class ControladorCrearEmpleado implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.vista.getjButton1()){
+            
+            if (!this.vista.getjTextField1().getText().equals(null) && !this.vista.getjTextField2().getText().equals(null) && !this.vista.getjTextField3().getText().equals(null) ) {
+                if (this.vista.getjComboBox1().equals("Programador")) {
+                    this.programador.setDocumento(Integer.parseInt(this.vista.getjTextField1().getText()));
+                    this.programador.setDomicilio(this.vista.getjTextField2().getText());
+                    this.programador.setNombre(this.vista.getjTextField3().getText());
+                   
+                }
+                if (this.vista.getjComboBox1().equals("Analista")) {
+                    this.analista.setDocumento(Integer.parseInt(this.vista.getjTextField1().getText()));
+                    this.analista.setDomicilio(this.vista.getjTextField2().getText());
+                    this.analista.setNombre(this.vista.getjTextField3().getText());
+                }
+            }
+            
+            
+            
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);
         }

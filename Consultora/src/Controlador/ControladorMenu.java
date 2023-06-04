@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Programador;
 import Vista.Consultar;
 import Vista.CrearCliente;
 import Vista.CrearEmpleado;
@@ -14,6 +15,7 @@ import Vista.OpcionCrear;
 import Vista.TerminarTrabajo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +24,7 @@ import java.awt.event.ActionListener;
 public class ControladorMenu implements ActionListener{
     public Menu m;
     public Consultora consultora = new Consultora();
+    
     //vistas
     public Consultar consultar = new Consultar();
     public OpcionCrear opcionCrear = new OpcionCrear();
@@ -37,7 +40,11 @@ public class ControladorMenu implements ActionListener{
     public ControladorCrearEmpleado controladorCrearEmpleado = new ControladorCrearEmpleado(this);
     public ControladorModificar controladorModificar = new ControladorModificar(this);
     public ControladorTerminarTrabajo controladorTerminarTrabajo=new ControladorTerminarTrabajo(this);
-    
+
+    public ControladorMenu() {
+      
+    }
+  
     public ControladorMenu(Menu m){
         this.m = m;
         this.m.getjButton1().addActionListener(this);
@@ -46,6 +53,10 @@ public class ControladorMenu implements ActionListener{
         this.m.getjButton4().addActionListener(this);
         this.m.setVisible(true);
     }
+    
+    public int hacercaca(){
+    return 1;}
+    
     
     @Override
     public void actionPerformed(ActionEvent e) {

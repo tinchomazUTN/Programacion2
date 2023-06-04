@@ -4,23 +4,22 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author joaco
  */
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 public class Consultora {
-    private ArrayList<Programador> programadores= new ArrayList();
-    private ArrayList<Analista> analistas= new ArrayList();
-    private ArrayList<Cliente> clientes= new ArrayList();
+
+    public ArrayList<Programador> programadores;
+    public ArrayList<Analista> analistas;
+    public ArrayList<Cliente> clientes;
 
     public Consultora() {
     }
 
-    public ArrayList<Programador> getProgramadores() {
+   public ArrayList<Programador> getProgramadores() {
         return programadores;
     }
 
@@ -41,7 +40,21 @@ public class Consultora {
     public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
+
+    public void setProgramadores(ArrayList<Programador> programadores) {
+        this.programadores = programadores;
+    }
     
+    public void setAnalistas(ArrayList<Analista> analistas) {
+        this.analistas = analistas;
+       
+    }
+
+    public void setClientes(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+    
+   
     public double liquidacionDesde( int mes1, int año1, int mes2, int año2) {
         // nos ingresaran dos fechas, debemos recorrer los arrays de cobros de los programadores y 
         //sumar todos los cobros entre esas dos fechas, 
@@ -50,8 +63,7 @@ public class Consultora {
     }
     
     public int horasTrabajadasEn(Programador programador) {
-        // devuelve total de horas trabajadas por un programador,
-        //ya tenemos esa variable dentro de cada programador
+        
         return 1;
     }
     
@@ -60,4 +72,6 @@ public class Consultora {
          //y devolver los que tienen un sueldo en ese mes y año, y de esos devolver cual es el mayor   
         return 1;
     }
+    
+    
 }
