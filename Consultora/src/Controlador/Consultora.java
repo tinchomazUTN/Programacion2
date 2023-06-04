@@ -24,11 +24,11 @@ public class Consultora {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        Conexion conexionBd = new Conexion();
+       // Conexion conexionBd = new Conexion();
         Menu m = new Menu();
         ControladorMenu controlador = new ControladorMenu(m);  
-        llenar(conexionBd.conectar(),conexionBd,controlador);
-        conexionBd.desconectar();
+        //llenar(conexionBd.conectar(),conexionBd,controlador);
+        //conexionBd.desconectar();
     }
     public static void llenar(Connection con,Conexion BD,ControladorMenu cm) throws SQLException{
         try {

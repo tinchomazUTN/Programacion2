@@ -18,9 +18,11 @@ public class ControladorTerminarTrabajo implements ActionListener{
     String[] años = {"2020","2021", "2022", "2023", "2024"};
     String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};  
     public ControladorTerminarTrabajo(ControladorMenu cm) {
+        
         this.cm = cm;
         this.vista = cm.terminarTrabajo;
         this.vista.getjButton1().addActionListener(this);
+        this.vista.getjButton2().addActionListener(this);
         this.vista.getjComboBox1().addActionListener(this);
         this.vista.getjComboBox2().addActionListener(this);
         this.vista.getjComboBox3().addActionListener(this);
@@ -43,6 +45,10 @@ public class ControladorTerminarTrabajo implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == this.vista.getjButton2()){
+            this.cm.m.setVisible(true);
+            this.vista.setVisible(false);
+        }
         if(e.getSource() == this.vista.getjButton1()){
             for (Programador prog : this.cm.consultora.programadores) {
                 

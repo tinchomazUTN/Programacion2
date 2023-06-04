@@ -21,7 +21,47 @@ public class Consultora {
         analistas = new ArrayList<>();
         clientes = new ArrayList<>();
     }
-
+    
+    public int recorrerSueldosProg(int mes, int año){
+        int mayorSueldoProg=0;
+        int posicionProg=0;
+        for (int i = 0; i < programadores.size(); i++) {
+            if (programadores.get(i).getSueldoMes(mes, año)>mayorSueldoProg){
+                mayorSueldoProg=programadores.get(i).getSueldoMes(mes, año);
+                posicionProg=i;
+            }
+            
+        }
+        
+        return posicionProg;
+        }
+    
+    public int recorrerSueldosAnal(int mes, int año){
+        int mayorSueldoAnalista=0;
+        int posicionAnal=0;
+        for (int i = 0; i < analistas.size(); i++) {
+            if (analistas.get(i).getSueldoMes(mes, año)>mayorSueldoAnalista){
+                mayorSueldoAnalista=analistas.get(i).getSueldoMes(mes, año);
+                posicionAnal=i;
+            }
+            
+        }
+         
+        return posicionAnal;
+        }
+    
+    public int meyorSueldo(int mes, int año){
+        int mayor=0;
+       int a=recorrerSueldosAnal( mes,año);
+       int b=recorrerSueldosProg( mes,año);
+        if (a>b) {
+            return a;
+        }else {
+        return b;}
+ 
+    }
+    
+    
    public ArrayList<Programador> getProgramadores() {
         return programadores;
     }

@@ -14,7 +14,7 @@ public class Programador extends Empleado {
     private Cliente cliente = new Cliente();
     private int tiempoTrabajado=0;
     
-    private int [][] sueldoMes= new int[12][5];
+    private int [][] sueldoMes = new int[12][5];
     
 
     
@@ -59,7 +59,7 @@ public class Programador extends Empleado {
 
     public void setSueldoMes(int mes ,int año) {
         this.sueldoMes[mes][año] = (int) (this.tiempoTrabajado * this.cliente.getPrecioHora());
-        System.out.println("sueldo: "+this.sueldoMes[mes][año]);
+        
     }
 
     @Override
