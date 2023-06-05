@@ -70,6 +70,9 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
+
         jButton1.setText("Consultar");
 
         jButton2.setText("Añadir");

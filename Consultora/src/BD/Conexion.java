@@ -1,16 +1,9 @@
 
 package BD;
 
-import Controlador.ControladorMenu;
-import Modelo.Analista;
-import Modelo.Cliente;
-import Modelo.Consultora;
-import Modelo.Programador;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,7 +14,7 @@ public class Conexion {
     String user = "root";
     String password = "root";
     String driver = "com.mysql.cj.jdbc.Driver";
-    Connection cx = this.conectar();
+    Connection cx;
     
     public Conexion() {
     
@@ -47,6 +40,7 @@ public class Conexion {
         }
     }
     
+<<<<<<< HEAD
     public void iniciar(ControladorMenu cm){
         try {
             Statement stm = cx.createStatement();
@@ -99,3 +93,6 @@ public class Conexion {
     
 
 }
+=======
+}
+>>>>>>> cf168771ea799751a8210735eecd15a23a0b190d
