@@ -12,11 +12,13 @@ import java.util.ArrayList;
  */
 public class Programador extends Empleado {
     private Cliente cliente = new Cliente();
+    
     private int tiempoTrabajado=0;
     
-    private int [][] sueldoMes = new int[12][5];
+    private int tiempoTrabajadoTotal=0;
     
-
+    private int [][] sueldoMes = new int[12][3];
+    
     
     public Programador() {
     }
@@ -28,6 +30,14 @@ public class Programador extends Empleado {
     
     public void setNombre(String nombre) {
         super.setNombre(nombre);
+    }
+
+    public int getTiempoTrabajadoTotal() {
+        return tiempoTrabajadoTotal;
+    }
+
+    public void setTiempoTrabajadoTotal(int tiempoTrabajadoTotal) {
+        this.tiempoTrabajadoTotal = tiempoTrabajadoTotal;
     }
     
     public void setDocumento(int documento) {
@@ -57,9 +67,8 @@ public class Programador extends Empleado {
         return sueldoMes[mes][año];
     }
 
-    public void setSueldoMes(int mes ,int año) {
-        this.sueldoMes[mes][año] = (int) (this.tiempoTrabajado * this.cliente.getPrecioHora());
-        
+    public void setSueldoMes(int mes ,int año,int tiempo) {
+        this.sueldoMes[mes][año] = (int) (tiempo * this.cliente.getPrecioHora());
     }
 
     @Override
@@ -68,8 +77,8 @@ public class Programador extends Empleado {
     }
     
     public void aumentarHoras (int a){
-        this.tiempoTrabajado+=a;
-        System.out.println("tiempo trabajado "+this.tiempoTrabajado);
+        this.tiempoTrabajadoTotal+=a;
+        
     }
     
 }

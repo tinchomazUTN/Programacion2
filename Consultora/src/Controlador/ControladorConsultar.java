@@ -17,7 +17,8 @@ import java.awt.event.ActionListener;
 public class ControladorConsultar implements ActionListener{
     ControladorMenu cm;
     Consultar vista;
-    String[] años =  {"2020","2021", "2022", "2023", "2024"};
+    
+    String[] años =  {"2020","2021", "2022"};
     String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};  
 
     public ControladorConsultar(ControladorMenu cm) {
@@ -42,7 +43,7 @@ public class ControladorConsultar implements ActionListener{
          this.vista.getjComboBox6().addItem(meses[i]);
         }
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
         this.vista.getjComboBox3().addItem(años[i]);
         this.vista.getjComboBox5().addItem(años[i]);
         this.vista.getjComboBox7().addItem(años[i]);
@@ -67,13 +68,16 @@ public class ControladorConsultar implements ActionListener{
         
         if(e.getSource() == this.vista.getjButton3()){
             
+            System.out.println("ANDO");
+            this.vista.getjTextField3().setText(Integer.toString(this.cm.consultora.sumatoriaSueldos(this.vista.getjComboBox4().getSelectedIndex()-1, this.vista.getjComboBox5().getSelectedIndex()-1, this.vista.getjComboBox6().getSelectedIndex()-1, this.vista.getjComboBox7().getSelectedIndex()-1)));
+            
         }
         if(e.getSource() == this.vista.getjButton4()){
             
             for (Programador prog : this.cm.consultora.programadores) {
                 if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem())) {
                     
-                this.vista.getjTextField1().setText(Integer.toString(prog.getTiempoTrabajado()));
+                this.vista.getjTextField1().setText(Integer.toString(prog.getTiempoTrabajadoTotal()));
             }
             }
             
