@@ -21,7 +21,125 @@ public class Consultora {
         analistas = new ArrayList<>();
         clientes = new ArrayList<>();
     }
+    
+    public int recorrerSueldosProg(int mes, int año){
+        int mayorSueldoProg=0;
+        int posicionProg=0;
+        for (int i = 0; i < programadores.size(); i++) {
+            if (programadores.get(i).getSueldoMes(mes, año)>mayorSueldoProg){
+                mayorSueldoProg=programadores.get(i).getSueldoMes(mes, año);
+                posicionProg=i;
+            }
+            
+        }
+        
+        return posicionProg;
+        }
+    
+    public int recorrerSueldosAnal(int mes, int año){
+        int mayorSueldoAnalista=0;
+        int posicionAnal=0;
+        for (int i = 0; i < analistas.size(); i++) {
+            if (analistas.get(i).getSueldoMes(mes, año)>mayorSueldoAnalista){
+                mayorSueldoAnalista=analistas.get(i).getSueldoMes(mes, año);
+                posicionAnal=i;
+            }
+            
+        }
+         
+        return posicionAnal;
+        }
+    
+    public int sumatoriaSueldos(int mes1, int año1, int mes2, int año2){
+        int sumatoria=0;
+        
 
+        if (año1==año2) {
+            System.out.println("entre en año1==año2");
+            for (int i = 0; i < this.programadores.size(); i++) {
+              for (int j = mes1; j <= mes2; j++) {
+               sumatoria+=this.programadores.get(i).getSueldoMes(j, año1);
+                }  
+            }
+            for (int i = 0; i < this.analistas.size(); i++) {
+                
+              for (int j = mes1; j <= mes2; j++) {
+                  System.out.println("entre en analistas"+j);
+               sumatoria+=this.analistas.get(i).getSueldoMes(j, año1);
+               
+                }  
+            }
+        }
+        
+        else if (año1<año2) {
+            if (año2-año1==1) {
+                 System.out.println("entre en año 2 - año1 ==1 ");
+                for (int i = 0; i < this.programadores.size(); i++) {
+                
+                    for (int k = mes1; k < 12; k++) {
+                        sumatoria+=this.programadores.get(i).getSueldoMes(k, año1);
+                    } 
+                    for (int j = 0; j <= mes2; j++) {
+                        sumatoria+=this.programadores.get(i).getSueldoMes(j, año1+1);
+                    }  
+                }
+                for (int i = 0; i < this.analistas.size(); i++) {
+                
+                    for (int k = mes1; k < 12; k++) {
+                        sumatoria+=this.analistas.get(i).getSueldoMes(k, año1);
+                    } 
+                    for (int j = 0; j <= mes2; j++) {
+                        sumatoria+=this.analistas.get(i).getSueldoMes(j, año1+1);
+                    }  
+                }
+            }
+            if (año2-año1==2) {
+                System.out.println("entre en año 2 - año1 ==2 ");
+                for (int i = 0; i < this.programadores.size(); i++) {
+                
+                    for (int k = mes1; k < 12; k++) {
+                        sumatoria+=this.programadores.get(i).getSueldoMes(k, año1);
+                    } 
+                    for (int j = 0; j < 12; j++) {
+                        sumatoria+=this.programadores.get(i).getSueldoMes(j, año1+1);
+                    }  
+                    for (int h = 0; h <= mes2; h++) {
+                        sumatoria+=this.programadores.get(i).getSueldoMes(h, año1+2);
+                    } 
+                }
+                for (int i = 0; i < this.analistas.size(); i++) {
+                
+                    for (int k = mes1; k < 12; k++) {
+                        sumatoria+=this.analistas.get(i).getSueldoMes(k, año1);
+                    } 
+                    for (int j = 0; j <12; j++) {
+                        sumatoria+=this.analistas.get(i).getSueldoMes(j, año1+1);
+                    } 
+                    for (int h = mes1; h <= mes2; h++) {
+                        sumatoria+=this.analistas.get(i).getSueldoMes(h, año1+2);
+                    } 
+                     
+                }
+            }else {
+                        System.out.println("no entre");
+                        }
+            
+        }
+        return sumatoria;
+    }
+    
+    public int meyorSueldo(int mes, int año){
+        int mayor=0;
+       int a=recorrerSueldosAnal( mes,año);
+       int b=recorrerSueldosProg( mes,año);
+        if (a>b) {
+            return a;
+        }else {
+        return b;}
+ 
+    }
+    
+    
    public ArrayList<Programador> getProgramadores() {
         return programadores;
     }

@@ -23,14 +23,21 @@ public class ControladorCrearCliente implements ActionListener{
     
     
     public ControladorCrearCliente(ControladorMenu cm) {
+        
         this.cm = cm;
         this.vista = cm.crearCliente;
         this.vista.getjButton1().addActionListener(this);
+        this.vista.getjButton2().addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         Cliente cliente = new Cliente();
+        if(e.getSource() == this.vista.getjButton2()){
+            this.cm.m.setVisible(true);
+            this.vista.setVisible(false);
+        }
+        
         if(e.getSource()== this.vista.getjButton1()){
             if (!this.vista.getjTextField1().getText().isEmpty() && !this.vista.getjTextField2().getText().isEmpty() && !this.vista.getjTextField3().getText().isEmpty() ) {
                 cliente.setNombre(this.vista.getjTextField1().getText());

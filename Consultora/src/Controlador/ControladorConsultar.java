@@ -17,7 +17,8 @@ import java.awt.event.ActionListener;
 public class ControladorConsultar implements ActionListener{
     ControladorMenu cm;
     Consultar vista;
-    String[] años =  {"2020","2021", "2022", "2023", "2024"};
+    
+    String[] años =  {"2020","2021", "2022"};
     String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};  
 
     public ControladorConsultar(ControladorMenu cm) {
@@ -27,7 +28,7 @@ public class ControladorConsultar implements ActionListener{
         this.vista.getjButton2().addActionListener(this);
         this.vista.getjButton3().addActionListener(this);
         this.vista.getjButton4().addActionListener(this);
-        this.vista.getjComboBox1().addActionListener(this);//hay que poner los empleados
+        this.vista.getjComboBox1().addActionListener(this);
         
         this.vista.getjComboBox2().addItem(null);
         this.vista.getjComboBox3().addItem(null);
@@ -42,7 +43,7 @@ public class ControladorConsultar implements ActionListener{
          this.vista.getjComboBox6().addItem(meses[i]);
         }
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
         this.vista.getjComboBox3().addItem(años[i]);
         this.vista.getjComboBox5().addItem(años[i]);
         this.vista.getjComboBox7().addItem(años[i]);
@@ -56,9 +57,19 @@ public class ControladorConsultar implements ActionListener{
             this.vista.setVisible(false);
         }
         if(e.getSource() == this.vista.getjButton2()){
-            
+            int a = this.cm.consultora.recorrerSueldosProg(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1);
+            int b = this.cm.consultora.recorrerSueldosAnal(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1);
+            if (this.cm.consultora.programadores.get(a).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1)>=this.cm.consultora.analistas.get(b).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1)) {
+                this.vista.getjTextField2().setText(this.cm.consultora.programadores.get(a).getNombre()+" sueldo: "+this.cm.consultora.programadores.get(a).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1));
+            }else{
+                this.vista.getjTextField2().setText(this.cm.consultora.analistas.get(b).getNombre()+" sueldo: "+this.cm.consultora.analistas.get(b).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1));
+            }
         }
+        
         if(e.getSource() == this.vista.getjButton3()){
+            
+            System.out.println("ANDO");
+            this.vista.getjTextField3().setText(Integer.toString(this.cm.consultora.sumatoriaSueldos(this.vista.getjComboBox4().getSelectedIndex()-1, this.vista.getjComboBox5().getSelectedIndex()-1, this.vista.getjComboBox6().getSelectedIndex()-1, this.vista.getjComboBox7().getSelectedIndex()-1)));
             
         }
         if(e.getSource() == this.vista.getjButton4()){
@@ -66,7 +77,7 @@ public class ControladorConsultar implements ActionListener{
             for (Programador prog : this.cm.consultora.programadores) {
                 if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem())) {
                     
-                this.vista.getjTextField1().setText(Integer.toString(prog.getTiempoTrabajado()));
+                this.vista.getjTextField1().setText(Integer.toString(prog.getTiempoTrabajadoTotal()));
             }
             }
             

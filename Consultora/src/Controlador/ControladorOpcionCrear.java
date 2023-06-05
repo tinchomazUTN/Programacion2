@@ -28,10 +28,15 @@ public class ControladorOpcionCrear implements ActionListener{
         this.vista.getjButton2().addActionListener(this);
         this.vistaEmpleado = cm.crearEmpleado;
         this.vistaCliente = cm.crearCliente;
+        this.vista.getjButton3().addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == this.vista.getjButton3()){
+            this.cm.m.setVisible(true);
+            this.vista.setVisible(false);
+        }
         if(e.getSource()== vista.getjButton1()){
             this.vistaEmpleado.setVisible(true);
             this.vista.setVisible(false);

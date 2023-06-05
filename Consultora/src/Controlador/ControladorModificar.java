@@ -30,10 +30,15 @@ public class ControladorModificar implements ActionListener{
         this.vista.getjComboBox3().addActionListener(this);
         this.vista.getjComboBox4().addActionListener(this);
         this.vista.getjComboBox5().addActionListener(this);
+        this.vista.getjButton2().addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == this.vista.getjButton2()){
+            this.cm.m.setVisible(true);
+            this.vista.setVisible(false);
+        }
         if(e.getSource()== this.vista.getjButton1()){
             if(this.vista.getjComboBox2().getSelectedItem() != null){
                 for (Programador var : this.cm.consultora.programadores) {

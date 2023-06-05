@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Analista extends Empleado {
     private String categoria;
 
-    private int [][] sueldoMes= new int[12][5];
+    private int [][] sueldoMes= new int[12][3];
 
     public Analista() {
     }

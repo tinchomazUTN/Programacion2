@@ -15,12 +15,14 @@ import java.awt.event.ActionListener;
 public class ControladorTerminarTrabajo implements ActionListener{
     private ControladorMenu cm;
     private TerminarTrabajo vista;
-    String[] años = {"2020","2021", "2022", "2023", "2024"};
+    String[] años = {"2020","2021", "2022"};
     String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};  
     public ControladorTerminarTrabajo(ControladorMenu cm) {
+        
         this.cm = cm;
         this.vista = cm.terminarTrabajo;
         this.vista.getjButton1().addActionListener(this);
+        this.vista.getjButton2().addActionListener(this);
         this.vista.getjComboBox1().addActionListener(this);
         this.vista.getjComboBox2().addActionListener(this);
         this.vista.getjComboBox3().addActionListener(this);
@@ -35,7 +37,7 @@ public class ControladorTerminarTrabajo implements ActionListener{
         }
         this.vista.getjComboBox4().addItem(null);
         this.vista.getjComboBox6().addItem(null);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
         this.vista.getjComboBox4().addItem(años[i]);
         this.vista.getjComboBox6().addItem(años[i]);
         }
@@ -43,12 +45,16 @@ public class ControladorTerminarTrabajo implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == this.vista.getjButton2()){
+            this.cm.m.setVisible(true);
+            this.vista.setVisible(false);
+        }
         if(e.getSource() == this.vista.getjButton1()){
             for (Programador prog : this.cm.consultora.programadores) {
                 
                 if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem().toString())) {
                     prog.aumentarHoras(Integer.parseInt(this.vista.getjTextField1().getText()));
-                    prog.setSueldoMes(this.vista.getjComboBox3().getSelectedIndex()-1, this.vista.getjComboBox4().getSelectedIndex()-1);
+                    prog.setSueldoMes(this.vista.getjComboBox3().getSelectedIndex()-1, this.vista.getjComboBox4().getSelectedIndex()-1 , Integer.parseInt(this.vista.getjTextField1().getText()));
                 }
             }
             for (Analista anal : this.cm.consultora.analistas) {
