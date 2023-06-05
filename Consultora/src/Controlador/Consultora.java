@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import BD.Conexion;
 import Vista.Menu;
 import java.sql.SQLException;
 
@@ -18,10 +19,11 @@ public class Consultora {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args){
+        Conexion conexionBd = new Conexion();
         Menu m = new Menu();
         ControladorMenu controlador = new ControladorMenu(m);  
-
+        conexionBd.iniciar(controlador);
     }
 
 }
