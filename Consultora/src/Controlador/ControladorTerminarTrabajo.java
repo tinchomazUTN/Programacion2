@@ -55,6 +55,7 @@ public class ControladorTerminarTrabajo implements ActionListener {
                         prog.aumentarHoras(Integer.parseInt(this.vista.getjTextField1().getText()));
                         cm.conexion.agregarHorasProgramadorBD(prog,Integer.parseInt(this.vista.getjTextField1().getText()));
                         prog.setSueldoMes(this.vista.getjComboBox3().getSelectedIndex() - 1, this.vista.getjComboBox4().getSelectedIndex() - 1, Integer.parseInt(this.vista.getjTextField1().getText()));
+                        cm.conexion.agregarSueldoProgramadorBD(prog,this.vista.getjComboBox3().getSelectedIndex() - 1,this.vista.getjComboBox4().getSelectedIndex() - 1,Integer.parseInt(this.vista.getjTextField1().getText()));
                     }
                 }
             }
@@ -62,6 +63,8 @@ public class ControladorTerminarTrabajo implements ActionListener {
                 for (Analista anal : this.cm.consultora.analistas) {
                     if (anal.getNombre().equals(this.vista.getjComboBox2().getSelectedItem().toString())) {
                         anal.setSueldoMes(this.vista.getjComboBox5().getSelectedIndex() - 1, this.vista.getjComboBox6().getSelectedIndex() - 1);
+                        cm.conexion.agregarSueldoAnalistaBD(anal, this.vista.getjComboBox5().getSelectedIndex() - 1, this.vista.getjComboBox6().getSelectedIndex() - 1);
+                                
                     }
                 }
             }

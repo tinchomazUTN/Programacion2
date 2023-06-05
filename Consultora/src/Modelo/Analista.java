@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Analista extends Empleado {
 
     private int id;
-    private String categoria;
+    private String categoria ="Junior";
 
     private int[][] sueldoMes = new int[12][3];
 
@@ -71,6 +71,17 @@ public class Analista extends Empleado {
         }
 
         System.out.println("sueldo: " + this.sueldoMes[mes][año]);
+    }
+    
+    public int categoriaRemunerada(String categoria){
+        if (categoria.equals("Junior")) {
+            return 500;
+        } else if (categoria.equals("Semi Senior")) {
+            return 1000;
+        } else if (categoria.equals("Senior")) {
+            return 1500;
+        }
+        return 0;
     }
 
     @Override

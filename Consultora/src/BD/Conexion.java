@@ -59,7 +59,7 @@ public class Conexion {
                 pr.setNombre(resultado.getString("nombre"));
                 pr.setDomicilio(resultado.getString("domicilio"));
                 pr.setDocumento(resultado.getInt("dni"));
-                pr.setSueldoMes(llenarSueldoProgramador(pr, resultado.getInt("idprogramador")));
+                pr.setSueldoMes(llenarSueldoProgramador(pr));
                 cm.consultora.programadores.add(pr);
             }
 
@@ -72,7 +72,8 @@ public class Conexion {
                 an.setNombre(resultado.getString("nombre"));
                 an.setDomicilio(resultado.getString("domicilio"));
                 an.setDocumento(resultado.getInt("dni"));
-
+                an.setCategoria(resultado.getString("categoria"));
+                an.setSueldoMes(llenarSueldoAnalista(an));
                 cm.consultora.analistas.add(an);
             }
 
@@ -98,7 +99,7 @@ public class Conexion {
         }
     }
 
-    public int[][] llenarSueldoProgramador(Programador programador, int id) {
+    public int[][] llenarSueldoProgramador(Programador programador) {
         int[][] sueldoProgramador = new int[12][3];
         try {
             Statement stmS = cx.createStatement();
@@ -107,13 +108,13 @@ public class Conexion {
             while (resultado.next()) {
                 switch (resultado.getInt("anio")) {
                     case 2020:
-                        sueldoSegunAnio(resultado,0,sueldoProgramador);
+                        sueldoSegunAnio(resultado, 0, sueldoProgramador);
                         break;
                     case 2021:
-                        sueldoSegunAnio(resultado,1,sueldoProgramador);
+                        sueldoSegunAnio(resultado, 1, sueldoProgramador);
                         break;
                     case 2022:
-                        sueldoSegunAnio(resultado,2,sueldoProgramador);
+                        sueldoSegunAnio(resultado, 2, sueldoProgramador);
                         break;
                 }
             }
@@ -124,21 +125,48 @@ public class Conexion {
         }
         return sueldoProgramador;
     }
-    
-    public void sueldoSegunAnio(ResultSet resultado,Integer anio,int[][] sueldoProgramador){
+
+    public int[][] llenarSueldoAnalista(Analista analista) {
+        int[][] sueldoAnalista = new int[12][3];
         try {
-            sueldoProgramador[0][anio] = resultado.getInt("enero");
-            sueldoProgramador[1][anio] = resultado.getInt("febrero");
-            sueldoProgramador[2][anio] = resultado.getInt("marzo");
-            sueldoProgramador[3][anio] = resultado.getInt("abril");
-            sueldoProgramador[4][anio] = resultado.getInt("mayo");
-            sueldoProgramador[5][anio] = resultado.getInt("junio");
-            sueldoProgramador[6][anio] = resultado.getInt("julio");
-            sueldoProgramador[7][anio] = resultado.getInt("agosto");
-            sueldoProgramador[8][anio] = resultado.getInt("septiembre");
-            sueldoProgramador[9][anio] = resultado.getInt("octubre");
-            sueldoProgramador[10][anio] = resultado.getInt("noviembre");
-            sueldoProgramador[11][anio] = resultado.getInt("diciembre");
+            Statement stmS = cx.createStatement();
+            ResultSet resultado = stmS.executeQuery("SELECT * FROM sueldomes"
+                    + " WHERE idanalista = " + analista.getId());
+            while (resultado.next()) {
+                switch (resultado.getInt("anio")) {
+                    case 2020:
+                        sueldoSegunAnio(resultado, 0, sueldoAnalista);
+                        break;
+                    case 2021:
+                        sueldoSegunAnio(resultado, 1, sueldoAnalista);
+                        break;
+                    case 2022:
+                        sueldoSegunAnio(resultado, 2, sueldoAnalista);
+                        break;
+                }
+            }
+
+            resultado.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sueldoAnalista;
+    }
+
+    public void sueldoSegunAnio(ResultSet resultado, Integer anio, int[][] sueldo) {
+        try {
+            sueldo[0][anio] = resultado.getInt("enero");
+            sueldo[1][anio] = resultado.getInt("febrero");
+            sueldo[2][anio] = resultado.getInt("marzo");
+            sueldo[3][anio] = resultado.getInt("abril");
+            sueldo[4][anio] = resultado.getInt("mayo");
+            sueldo[5][anio] = resultado.getInt("junio");
+            sueldo[6][anio] = resultado.getInt("julio");
+            sueldo[7][anio] = resultado.getInt("agosto");
+            sueldo[8][anio] = resultado.getInt("septiembre");
+            sueldo[9][anio] = resultado.getInt("octubre");
+            sueldo[10][anio] = resultado.getInt("noviembre");
+            sueldo[11][anio] = resultado.getInt("diciembre");
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -328,6 +356,50 @@ public class Conexion {
             stm.executeUpdate("UPDATE programador SET "
                     + "`tiempoTrabajadoTotal` = " + (programador.getTiempoTrabajadoTotal() + horas)
                     + " WHERE `idprogramador` = " + programador.getId());
+
+            stm.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Consultora.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            this.desconectar();
+        }
+    }
+
+    public void agregarSueldoProgramadorBD(Programador programador, int mes, int anio, int sueldo) {
+        String[] anios = {"2020", "2021", "2022"};
+        String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
+        System.out.println("UPDATE sueldomes SET"
+                + "`" + meses[mes] + "` = " + (sueldo * programador.getCliente().getPrecioHora())
+                + " WHERE `anio` = " + anios[anio] + " `idprogramador` = " + programador.getId());
+        try {
+            this.cx = this.conectar();
+            Statement stm = cx.createStatement();
+            stm.executeUpdate("UPDATE sueldomes SET "
+                    + "`" + meses[mes] + "` = " + (sueldo * programador.getCliente().getPrecioHora())
+                    + " WHERE `anio` = " + anios[anio] + " and `idprogramador` = " + programador.getId());
+
+            stm.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Consultora.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            this.desconectar();
+        }
+    }
+
+    public void agregarSueldoAnalistaBD(Analista analista, int mes, int anio) {
+        System.out.println("Entre en analista");
+        String[] anios = {"2020", "2021", "2022"};
+        String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
+        System.out.println("UPDATE sueldomes SET"
+                + "`" + meses[mes] + "` = " + analista.categoriaRemunerada(analista.getCategoria())
+                + " WHERE `anio` = " + anios[anio] + " `idanalista` = " + analista.getId());
+        
+        try {
+            this.cx = this.conectar();
+            Statement stm = cx.createStatement();
+            stm.executeUpdate("UPDATE sueldomes SET "
+                + "`" + meses[mes] + "` = " + analista.categoriaRemunerada(analista.getCategoria())
+                + " WHERE `anio` = " + anios[anio] + " and `idanalista` = " + analista.getId());
 
             stm.close();
         } catch (SQLException ex) {
