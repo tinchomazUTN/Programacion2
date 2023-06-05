@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import BD.Conexion;
 import Modelo.Analista;
 import Modelo.Cliente;
 import Modelo.Programador;
@@ -28,6 +29,7 @@ public class ControladorMenu implements ActionListener {
 
     public Menu m;
     public Consultora consultora = new Consultora();
+    public Conexion conexion;
 
     //vistas
     public Consultar consultar = new Consultar();
@@ -45,7 +47,8 @@ public class ControladorMenu implements ActionListener {
     public ControladorModificar controladorModificar = new ControladorModificar(this);
     public ControladorTerminarTrabajo controladorTerminarTrabajo = new ControladorTerminarTrabajo(this);
 
-    public ControladorMenu(Menu m) {
+    public ControladorMenu(Menu m,Conexion con) {
+        this.conexion=con;
         this.m = m;
         this.m.getjButton1().addActionListener(this);
         this.m.getjButton2().addActionListener(this);

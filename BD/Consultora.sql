@@ -15,28 +15,6 @@ CREATE SCHEMA IF NOT EXISTS `Consultora` DEFAULT CHARACTER SET utf8 COLLATE utf8
 USE `Consultora` ;
 
 -- -----------------------------------------------------
--- Table `Consultora`.`sueldoMes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Consultora`.`sueldoMes` (
-  `idsueldoMes` INT NOT NULL AUTO_INCREMENT,
-  `enero` INT NULL,
-  `febrero` INT NULL,
-  `marzo` INT NULL,
-  `abril` INT NULL,
-  `mayo` INT NULL,
-  `junio` INT NULL,
-  `julio` INT NULL,
-  `agosto` INT NULL,
-  `septiembre` INT NULL,
-  `octubre` INT NULL,
-  `noviembre` INT NULL,
-  `diciembre` INT NULL,
-  `anio` INT NULL,
-  PRIMARY KEY (`idsueldoMes`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `Consultora`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Consultora`.`cliente` (
@@ -57,16 +35,10 @@ CREATE TABLE IF NOT EXISTS `Consultora`.`programador` (
   `domicilio` VARCHAR(45) NULL,
   `dni` INT NULL,
   `tiempoTrabajado` DECIMAL(10,2) NULL,
-  `sueldoMes` INT NULL,
   `cliente` INT NULL,
+  `tiempoTrabajadoTotal` INT NULL,
   PRIMARY KEY (`idprogramador`),
-  INDEX `fk_programador_sueldoMes1_idx` (`sueldoMes` ASC) VISIBLE,
   INDEX `fk_programador_cliente1_idx` (`cliente` ASC) VISIBLE,
-  CONSTRAINT `fk_programador_sueldoMes1`
-    FOREIGN KEY (`sueldoMes`)
-    REFERENCES `Consultora`.`sueldoMes` (`idsueldoMes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_programador_cliente1`
     FOREIGN KEY (`cliente`)
     REFERENCES `Consultora`.`cliente` (`idcliente`)
@@ -83,13 +55,42 @@ CREATE TABLE IF NOT EXISTS `Consultora`.`analista` (
   `nombre` VARCHAR(45) NULL,
   `domicilio` VARCHAR(45) NULL,
   `dni` INT NULL,
-  `categoria` VARCHAR(2) NULL,
-  `sueldoMes` INT NULL,
-  PRIMARY KEY (`idanalista`),
-  INDEX `fk_analista_sueldoMes_idx` (`sueldoMes` ASC) VISIBLE,
-  CONSTRAINT `fk_analista_sueldoMes`
-    FOREIGN KEY (`sueldoMes`)
-    REFERENCES `Consultora`.`sueldoMes` (`idsueldoMes`)
+  `categoria` VARCHAR(45) NULL,
+  PRIMARY KEY (`idanalista`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Consultora`.`sueldoMes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Consultora`.`sueldoMes` (
+  `idsueldoMes` INT NOT NULL AUTO_INCREMENT,
+  `enero` INT NULL,
+  `febrero` INT NULL,
+  `marzo` INT NULL,
+  `abril` INT NULL,
+  `mayo` INT NULL,
+  `junio` INT NULL,
+  `julio` INT NULL,
+  `agosto` INT NULL,
+  `septiembre` INT NULL,
+  `octubre` INT NULL,
+  `noviembre` INT NULL,
+  `diciembre` INT NULL,
+  `anio` INT NULL,
+  `idprogramador` INT NULL,
+  `idanalista` INT NULL,
+  PRIMARY KEY (`idsueldoMes`),
+  INDEX `fk_sueldoMes_programador1_idx` (`idprogramador` ASC) VISIBLE,
+  INDEX `fk_sueldoMes_analista1_idx` (`idanalista` ASC) VISIBLE,
+  CONSTRAINT `fk_sueldoMes_programador1`
+    FOREIGN KEY (`idprogramador`)
+    REFERENCES `Consultora`.`programador` (`idprogramador`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sueldoMes_analista1`
+    FOREIGN KEY (`idanalista`)
+    REFERENCES `Consultora`.`analista` (`idanalista`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

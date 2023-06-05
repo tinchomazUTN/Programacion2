@@ -21,7 +21,7 @@ public class Consultora {
    public static void main(String[] args){
         Conexion conexionBd = new Conexion();
         Menu m = new Menu();
-        ControladorMenu controlador = new ControladorMenu(m);  
+        ControladorMenu controlador = new ControladorMenu(m,conexionBd);  
         conexionBd.iniciar(controlador);
     }
    

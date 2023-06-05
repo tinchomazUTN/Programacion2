@@ -40,10 +40,12 @@ public class ControladorCrearCliente implements ActionListener{
         
         if(e.getSource()== this.vista.getjButton1()){
             if (!this.vista.getjTextField1().getText().isEmpty() && !this.vista.getjTextField2().getText().isEmpty() && !this.vista.getjTextField3().getText().isEmpty() ) {
+                cliente.setId(cm.conexion.obtenerUltimoIdCliente());
                 cliente.setNombre(this.vista.getjTextField1().getText());
                 cliente.setDireccion(this.vista.getjTextField3().getText());
                 cliente.setPrecioHora(Integer.parseInt(this.vista.getjTextField2().getText()));
                 this.cm.consultora.agregarCliente(cliente);
+                cm.conexion.agregarClienteBD(cliente);
             }else{
                 JOptionPane.showMessageDialog(vista, "Datos Vacios,volviendo al Menu");
             }

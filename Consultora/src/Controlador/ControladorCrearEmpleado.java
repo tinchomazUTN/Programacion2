@@ -44,19 +44,24 @@ public class ControladorCrearEmpleado implements ActionListener{
             
             if (!this.vista.getjTextField1().getText().isEmpty() && !this.vista.getjTextField2().getText().isEmpty() && !this.vista.getjTextField3().getText().isEmpty()){
                 if (this.vista.getjComboBox1().getSelectedItem().toString().equals("Programador")) {
+                    programador.setId(cm.conexion.obtenerUltimoIdProgramador());
                     programador.setDocumento(Integer.parseInt(this.vista.getjTextField1().getText()));
                     programador.setDomicilio(this.vista.getjTextField2().getText());
                     programador.setNombre(this.vista.getjTextField3().getText());
                     this.cm.consultora.programadores.add(programador);
+                    cm.conexion.agregarProgramadorBD(programador);
+                    //Salida por consola
                     for (Programador pr : this.cm.consultora.programadores) {
                         System.out.println(pr.getNombre());
                     }
                 }
                 if (this.vista.getjComboBox1().getSelectedItem().toString().equals("Analista")) {
+                    analista.setId(cm.conexion.obtenerUltimoIdAnalista());
                     analista.setDocumento(Integer.parseInt(this.vista.getjTextField1().getText()));
                     analista.setDomicilio(this.vista.getjTextField2().getText());
                     analista.setNombre(this.vista.getjTextField3().getText());
                     this.cm.consultora.agregarAnalista(analista);
+                    cm.conexion.agregarAnalistaBD(analista);
                 }
             }else{
                 JOptionPane.showMessageDialog(vista, "Datos Vacios,volviendo al Menu");

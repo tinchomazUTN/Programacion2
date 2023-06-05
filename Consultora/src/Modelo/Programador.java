@@ -77,6 +77,9 @@ public class Programador extends Empleado {
     public int getSueldoMes(int mes, int año) {
         return sueldoMes[mes][año];
     }
+    public void setSueldoMes(int[][] sueldomes){
+        this.sueldoMes = sueldomes;
+    }
 
     public void setSueldoMes(int mes ,int año,int tiempo) {
         this.sueldoMes[mes][año] = (int) (tiempo * this.cliente.getPrecioHora());
