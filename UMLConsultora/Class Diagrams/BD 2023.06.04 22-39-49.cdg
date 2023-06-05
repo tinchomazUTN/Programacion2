@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="BD">
+  <ClassDiagramComponents>
+    <Class name="Conexion" package="BD" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="bd" type="String" visibility="package"/>
+        <Field name="url" type="String" visibility="package"/>
+        <Field name="user" type="String" visibility="package"/>
+        <Field name="password" type="String" visibility="package"/>
+        <Field name="driver" type="String" visibility="package"/>
+        <Field name="cx" type="Connection" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="conectar" returnType="Connection" visibility="public"/>
+        <Method name="desconectar" returnType="void" visibility="public"/>
+        <Method name="iniciar" returnType="void" visibility="public">
+          <Argument type="ControladorMenu" name="cm"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

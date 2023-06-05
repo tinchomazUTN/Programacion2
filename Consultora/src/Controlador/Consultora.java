@@ -6,14 +6,9 @@
 package Controlador;
 
 import BD.Conexion;
-import Modelo.Programador;
 import Vista.Menu;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 
 /**
  *
@@ -24,32 +19,11 @@ public class Consultora {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
-        //Conexion conexionBd = new Conexion();
+    public static void main(String[] args){
+        Conexion conexionBd = new Conexion();
         Menu m = new Menu();
         ControladorMenu controlador = new ControladorMenu(m);  
-        //llenar(conexionBd.conectar(),conexionBd,controlador);
-        //conexionBd.desconectar();
+        conexionBd.iniciar(controlador);
     }
-    public static void llenar(Connection con,Conexion BD,ControladorMenu cm) throws SQLException{
-        try {
-            Statement stm = con.createStatement();
-            ResultSet resultado = stm.executeQuery("SELECT * FROM programador");
-            
-            while(resultado.next()){
-                Programador pr = new Programador();
-                pr.setNombre(resultado.getString("nombre"));
-                pr.setDomicilio(resultado.getString("domicilio"));
-                pr.setDocumento(resultado.getInt("dni"));
-                cm.consultora.programadores.add(pr);
-                System.out.println(resultado.getString("nombre") + " " + resultado.getString("domicilio")+ " " + resultado.getString("dni"));
-            }
-            stm.close();
-            resultado.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Consultora.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            con.close();
-        }
-    }
+   
 }

@@ -28,7 +28,7 @@ public class ControladorMenu implements ActionListener {
 
     public Menu m;
     public Consultora consultora = new Consultora();
-
+   
     //vistas
     public Consultar consultar = new Consultar();
     public OpcionCrear opcionCrear = new OpcionCrear();

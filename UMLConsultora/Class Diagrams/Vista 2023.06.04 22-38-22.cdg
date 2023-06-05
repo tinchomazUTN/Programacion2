@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Vista">
+  <ClassDiagramComponents>
+    <Class name="Consultar" package="Vista" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox3" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox4" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox5" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox6" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox7" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jTextField2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jComboBox1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getjComboBox1" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox1" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox1"/>
+        </Method>
+        <Method name="getjComboBox2" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox2" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox2"/>
+        </Method>
+        <Method name="getjComboBox3" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox3" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox3"/>
+        </Method>
+        <Method name="getjComboBox4" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox4" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox4"/>
+        </Method>
+        <Method name="getjComboBox5" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox5" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox5"/>
+        </Method>
+        <Method name="getjComboBox6" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox6" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox6"/>
+        </Method>
+        <Method name="getjComboBox7" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox7" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox7"/>
+        </Method>
+        <Method name="getjLabel1" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel1" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel1"/>
+        </Method>
+        <Method name="getjLabel10" returnType="JLabel" visibility="public"/>
+        <Method name="getjButton2" returnType="JButton" visibility="public"/>
+        <Method name="setjButton2" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton2"/>
+        </Method>
+        <Method name="getjButton3" returnType="JButton" visibility="public"/>
+        <Method name="setjButton3" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton3"/>
+        </Method>
+        <Method name="getjButton4" returnType="JButton" visibility="public"/>
+        <Method name="setjButton4" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton4"/>
+        </Method>
+        <Method name="setjLabel10" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel10"/>
+        </Method>
+        <Method name="getjLabel11" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel11" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel11"/>
+        </Method>
+        <Method name="getjLabel12" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel12" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel12"/>
+        </Method>
+        <Method name="getjLabel2" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel2" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel2"/>
+        </Method>
+        <Method name="getjLabel3" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel3" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel3"/>
+        </Method>
+        <Method name="getjLabel4" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel4" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel4"/>
+        </Method>
+        <Method name="getjLabel5" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel5" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel5"/>
+        </Method>
+        <Method name="getjLabel6" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel6" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel6"/>
+        </Method>
+        <Method name="getjLabel7" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel7" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel7"/>
+        </Method>
+        <Method name="getjLabel8" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel8" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel8"/>
+        </Method>
+        <Method name="getjLabel9" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel9" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel9"/>
+        </Method>
+        <Method name="getjPanel1" returnType="JPanel" visibility="public"/>
+        <Method name="setjPanel1" returnType="void" visibility="public">
+          <Argument type="JPanel" name="jPanel1"/>
+        </Method>
+        <Method name="getjTextField1" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField1" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField1"/>
+        </Method>
+        <Method name="getjTextField2" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField2" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField2"/>
+        </Method>
+        <Method name="getjTextField3" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField3" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField3"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CrearCliente" package="Vista" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="getjTextField1" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField1" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField1"/>
+        </Method>
+        <Method name="getjTextField2" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField2" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField2"/>
+        </Method>
+        <Method name="getjTextField3" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField3" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField3"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jTextField2KeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CrearEmpleado" package="Vista" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="getjComboBox1" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox1" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox1"/>
+        </Method>
+        <Method name="getjTextField1" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField1" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField1"/>
+        </Method>
+        <Method name="getjTextField2" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField2" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField2"/>
+        </Method>
+        <Method name="getjTextField3" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField3" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField3"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jTextField1KeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="Vista" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="getjButton2" returnType="JButton" visibility="public"/>
+        <Method name="setjButton2" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton2"/>
+        </Method>
+        <Method name="getjButton3" returnType="JButton" visibility="public"/>
+        <Method name="setjButton3" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton3"/>
+        </Method>
+        <Method name="getjButton4" returnType="JButton" visibility="public"/>
+        <Method name="setjButton4" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton4"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Modificar" package="Vista" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox3" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox4" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox5" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="getjComboBox1" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox1" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox1"/>
+        </Method>
+        <Method name="getjComboBox2" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox2" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox2"/>
+        </Method>
+        <Method name="getjComboBox3" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox3" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox3"/>
+        </Method>
+        <Method name="getjComboBox4" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox4" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox4"/>
+        </Method>
+        <Method name="getjComboBox5" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox5" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox5"/>
+        </Method>
+        <Method name="getjTextField1" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField1" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField1"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jTextField1KeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OpcionCrear" package="Vista" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="getjButton2" returnType="JButton" visibility="public"/>
+        <Method name="setjButton2" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton2"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TerminarTrabajo" package="Vista" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox3" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox4" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox5" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox6" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getjButton1" returnType="JButton" visibility="public"/>
+        <Method name="setjButton1" returnType="void" visibility="public">
+          <Argument type="JButton" name="jButton1"/>
+        </Method>
+        <Method name="getjComboBox1" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox1" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox1"/>
+        </Method>
+        <Method name="getjComboBox2" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox2" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox2"/>
+        </Method>
+        <Method name="getjComboBox3" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox3" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox3"/>
+        </Method>
+        <Method name="getjComboBox4" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox4" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox4"/>
+        </Method>
+        <Method name="getjComboBox5" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox5" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox5"/>
+        </Method>
+        <Method name="getjComboBox6" returnType="JComboBox&lt;String&gt;" visibility="public"/>
+        <Method name="setjComboBox6" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="jComboBox6"/>
+        </Method>
+        <Method name="getjTextField1" returnType="JTextField" visibility="public"/>
+        <Method name="setjTextField1" returnType="void" visibility="public">
+          <Argument type="JTextField" name="jTextField1"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jComboBox1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jComboBox2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jComboBox5ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTextField1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
