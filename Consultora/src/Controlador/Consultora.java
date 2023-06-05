@@ -18,12 +18,12 @@ public class Consultora {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
-       // Conexion conexionBd = new Conexion();
+   public static void main(String[] args){
+        Conexion conexionBd = new Conexion();
         Menu m = new Menu();
         ControladorMenu controlador = new ControladorMenu(m);  
-        //llenar(conexionBd.conectar(),conexionBd,controlador);
-        //conexionBd.desconectar();
+        conexionBd.iniciar(controlador);
     }
+   
  
 }
