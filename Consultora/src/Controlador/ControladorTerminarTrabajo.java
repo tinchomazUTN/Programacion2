@@ -45,45 +45,30 @@ public class ControladorTerminarTrabajo implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.vista.getjButton2()){
-            this.cm.m.setVisible(true);
-            this.vista.setVisible(false);
-        }
+
         if(e.getSource() == this.vista.getjButton1()){
-            for (Programador prog : this.cm.consultora.programadores) {
-                
-                if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem().toString())) {
+            if((this.vista.getjComboBox1().getSelectedItem() != null) && (this.vista.getjTextField1().getText() != null) 
+               && (this.vista.getjComboBox3().getSelectedItem() != null) && (this.vista.getjComboBox4().getSelectedItem() != null)){
+                 for (Programador prog : this.cm.consultora.programadores) {
+                    if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem().toString())) {
                     prog.aumentarHoras(Integer.parseInt(this.vista.getjTextField1().getText()));
                     prog.setSueldoMes(this.vista.getjComboBox3().getSelectedIndex()-1, this.vista.getjComboBox4().getSelectedIndex()-1 , Integer.parseInt(this.vista.getjTextField1().getText()));
                 }
             }
-            for (Analista anal : this.cm.consultora.analistas) {
-                
-                if (anal.getNombre().equals(this.vista.getjComboBox2().getSelectedItem().toString())) {
-                   anal.setSueldoMes(this.vista.getjComboBox5().getSelectedIndex()-1, this.vista.getjComboBox6().getSelectedIndex()-1);
-                }
             }
-            
+            if((this.vista.getjComboBox2().getSelectedItem() != null) && (this.vista.getjComboBox5().getSelectedItem() != null) && (this.vista.getjComboBox6().getSelectedItem() != null)){
+                   for (Analista anal : this.cm.consultora.analistas) {
+                    if (anal.getNombre().equals(this.vista.getjComboBox2().getSelectedItem().toString())) {
+                    anal.setSueldoMes(this.vista.getjComboBox5().getSelectedIndex()-1, this.vista.getjComboBox6().getSelectedIndex()-1);
+                    }
+                } 
+            }
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);
-        }
-        if(e.getSource() == this.vista.getjComboBox1()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox2()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox3()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox4()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox5()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox6()){
-           
+        }       
+        if(e.getSource() == this.vista.getjButton2()){
+          this.cm.m.setVisible(true);
+          this.vista.setVisible(false);
         }
     }
     

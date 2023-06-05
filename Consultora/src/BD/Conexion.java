@@ -1,16 +1,9 @@
 
 package BD;
 
-import Controlador.ControladorMenu;
-import Modelo.Analista;
-import Modelo.Cliente;
-import Modelo.Consultora;
-import Modelo.Programador;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,7 +14,7 @@ public class Conexion {
     String user = "root";
     String password = "root";
     String driver = "com.mysql.cj.jdbc.Driver";
-    Connection cx = this.conectar();
+    Connection cx;
     
     public Conexion() {
     
@@ -47,51 +40,4 @@ public class Conexion {
         }
     }
     
-    public void iniciar(ControladorMenu cm){
-        try {
-            Statement stm = cx.createStatement();
-            ResultSet resultado = stm.executeQuery("SELECT * FROM programador");
-            
-            while(resultado.next()){
-                Programador pr = new Programador();
-                pr.setNombre(resultado.getString("nombre"));
-                pr.setDomicilio(resultado.getString("domicilio"));
-                pr.setDocumento(resultado.getInt("dni"));
-                cm.consultora.programadores.add(pr);
-            }
-            
-            resultado = null;
-            resultado = stm.executeQuery("SELECT * FROM analista");
-            
-            while(resultado.next()){
-                Analista an = new Analista();
-                an.setNombre(resultado.getString("nombre"));
-                an.setDomicilio(resultado.getString("domicilio"));
-                an.setDocumento(resultado.getInt("dni"));
-                
-                cm.consultora.analistas.add(an);
-            }
-            
-            resultado = null;
-            resultado = stm.executeQuery("SELECT * FROM cliente");
-            
-            while(resultado.next()){
-                Cliente cl = new Cliente();
-                cl.setNombre(resultado.getString("nombre"));
-                cl.setDireccion(resultado.getString("direccion"));
-                cl.setPrecioHora(resultado.getInt("precioHora"));
-                
-                cm.consultora.clientes.add(cl);
-            }
-            
-            stm.close();
-            resultado.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Consultora.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            this.desconectar();
-        }
-    }
-    
-
 }

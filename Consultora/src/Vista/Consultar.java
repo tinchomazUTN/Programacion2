@@ -22,6 +22,9 @@ public class Consultar extends javax.swing.JFrame {
     public Consultar() {
         initComponents();
         this.setLocationRelativeTo(null);
+        jTextField1.setEditable(false);
+        jTextField2.setEditable(false);
+        jTextField3.setEditable(false);
     }
 
     public JButton getjButton1() {
