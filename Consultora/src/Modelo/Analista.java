@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @author joaco
  */
 public class Analista extends Empleado {
+    private int id;
     private String categoria;
 
     private int [][] sueldoMes= new int[12][3];
@@ -21,6 +22,17 @@ public class Analista extends Empleado {
         super(nombre, domicilio, DNI);
         this.categoria = categoria;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
+    
      public void setNombre(String nombre) {
         super.setNombre(nombre);
     }

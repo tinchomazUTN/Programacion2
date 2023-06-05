@@ -54,9 +54,11 @@ public class Conexion {
             
             while(resultado.next()){
                 Programador pr = new Programador();
+                pr.setId(resultado.getInt("idprogramador"));
                 pr.setNombre(resultado.getString("nombre"));
                 pr.setDomicilio(resultado.getString("domicilio"));
                 pr.setDocumento(resultado.getInt("dni"));
+                
                 cm.consultora.programadores.add(pr);
             }
             
@@ -65,6 +67,7 @@ public class Conexion {
             
             while(resultado.next()){
                 Analista an = new Analista();
+                an.setId(resultado.getInt("idanalista"));
                 an.setNombre(resultado.getString("nombre"));
                 an.setDomicilio(resultado.getString("domicilio"));
                 an.setDocumento(resultado.getInt("dni"));
@@ -77,6 +80,7 @@ public class Conexion {
             
             while(resultado.next()){
                 Cliente cl = new Cliente();
+                cl.setId(resultado.getInt("idcliente"));
                 cl.setNombre(resultado.getString("nombre"));
                 cl.setDireccion(resultado.getString("direccion"));
                 cl.setPrecioHora(resultado.getInt("precioHora"));

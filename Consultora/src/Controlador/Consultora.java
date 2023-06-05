@@ -7,7 +7,6 @@ package Controlador;
 
 import BD.Conexion;
 import Vista.Menu;
-import java.sql.SQLException;
 
 
 /**

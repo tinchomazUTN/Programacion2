@@ -46,6 +46,7 @@ public class ControladorModificar implements ActionListener{
                         if(var2.getNombre().equals(this.vista.getjComboBox2().getSelectedItem()) 
                            && var.getNombre().equals(this.vista.getjComboBox1().getSelectedItem() )){
                             var.setCliente(var2);
+                            //funcion cambiar cliente
                         }
                     }
                 } 
@@ -55,6 +56,7 @@ public class ControladorModificar implements ActionListener{
                 for (Analista var : this.cm.consultora.analistas) {
                    if(var.getNombre().equals(this.vista.getjComboBox3().getSelectedItem())){
                        var.setCategoria(this.vista.getjComboBox4().getSelectedItem().toString());
+                       //funcion cambiar categoria
                    }
                 }
             }
@@ -62,6 +64,7 @@ public class ControladorModificar implements ActionListener{
                 for(Cliente var : this.cm.consultora.clientes){
                     if(var.getNombre().equals(this.vista.getjComboBox5().getSelectedItem())){
                         var.setPrecioHora(Integer.parseInt(this.vista.getjTextField1().getText()));
+                        //funcion cambiar precioHora
                     }
                 }
             }

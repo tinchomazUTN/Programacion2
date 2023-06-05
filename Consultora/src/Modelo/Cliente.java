@@ -9,6 +9,7 @@ package Modelo;
  * @author joaco
  */
 public class Cliente {
+    private int id;
     private String nombre = "";
     private String direccion = "";
     private int precioHora = 0;
@@ -23,6 +24,15 @@ public class Cliente {
         
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
     public String getNombre() {
         return nombre;
     }

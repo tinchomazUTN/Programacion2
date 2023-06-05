@@ -11,6 +11,8 @@ import java.util.ArrayList;
  * @author joaco
  */
 public class Programador extends Empleado {
+    private int id;
+    
     private Cliente cliente = new Cliente();
     
     private int tiempoTrabajado=0;
