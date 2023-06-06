@@ -11,6 +11,7 @@ import Vista.Menu;
 import Vista.Modificar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -47,16 +48,17 @@ public class ControladorModificar implements ActionListener{
                            && var.getNombre().equals(this.vista.getjComboBox1().getSelectedItem() )){
                             var.setCliente(var2);
                             cm.conexion.modificarClienteBD(var,var2);  
+                            JOptionPane.showMessageDialog(vista, "Datos Guardados en programador");
                         }
                     }
                 } 
             }
             if(this.vista.getjComboBox4().getSelectedItem() != null){
-
                 for (Analista var : this.cm.consultora.analistas) {
                    if(var.getNombre().equals(this.vista.getjComboBox3().getSelectedItem())){
                        var.setCategoria(this.vista.getjComboBox4().getSelectedItem().toString());
                        cm.conexion.modificarCategoriaBD(var, this.vista.getjComboBox4().getSelectedItem().toString());
+                       JOptionPane.showMessageDialog(vista, "Datos Guardados en analista");
                    }
                 }
             }
@@ -65,17 +67,9 @@ public class ControladorModificar implements ActionListener{
                     if(var.getNombre().equals(this.vista.getjComboBox5().getSelectedItem())){
                         var.setPrecioHora(Integer.parseInt(this.vista.getjTextField1().getText()));
                         cm.conexion.modificarPrecioHoraBD(var,Integer.parseInt(this.vista.getjTextField1().getText()));
+                        JOptionPane.showMessageDialog(vista, "Datos Guardados en cliente");
                     }
                 }
-            }
-            for (Programador var : this.cm.consultora.programadores) {
-                System.out.println(var.toString());
-            }
-            for (Analista analista : this.cm.consultora.analistas) {
-             System.out.println(analista.toString());
-            }
-            for (Cliente cliente : this.cm.consultora.clientes) {
-               System.out.println(cliente.toString());
             }
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);

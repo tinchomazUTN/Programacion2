@@ -19,6 +19,7 @@ public class OpcionCrear extends javax.swing.JFrame {
     public OpcionCrear() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Opciones para Crear");
     }
 
     public JButton getjButton3() {

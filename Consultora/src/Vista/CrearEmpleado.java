@@ -21,6 +21,7 @@ public class CrearEmpleado extends javax.swing.JFrame {
     public CrearEmpleado() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Añadir Empleado");
     }
 
     public JButton getjButton2() {

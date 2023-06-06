@@ -37,7 +37,7 @@ public class ControladorCrearCliente implements ActionListener{
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);
         }
-        
+        //Boton guardar cambios,si faltan campos no guarda nada
         if(e.getSource()== this.vista.getjButton1()){
             if (!this.vista.getjTextField1().getText().isEmpty() && !this.vista.getjTextField2().getText().isEmpty() && !this.vista.getjTextField3().getText().isEmpty() ) {
                 cliente.setId(cm.conexion.obtenerUltimoIdCliente());
@@ -46,6 +46,7 @@ public class ControladorCrearCliente implements ActionListener{
                 cliente.setPrecioHora(Integer.parseInt(this.vista.getjTextField2().getText()));
                 this.cm.consultora.agregarCliente(cliente);
                 cm.conexion.agregarClienteBD(cliente);
+                JOptionPane.showMessageDialog(vista, "Datos Guardados");
             }else{
                 JOptionPane.showMessageDialog(vista, "Datos Vacios,volviendo al Menu");
             }

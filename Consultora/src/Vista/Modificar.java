@@ -20,6 +20,7 @@ public class Modificar extends javax.swing.JFrame {
     public Modificar() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Modificar");
     }
 
     public JButton getjButton2() {

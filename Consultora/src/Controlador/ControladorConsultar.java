@@ -52,60 +52,60 @@ public class ControladorConsultar implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Boton para volver al Menu Principal
         if(e.getSource() == this.vista.getjButton1()){
             this.cm.m.setVisible(true);
             this.vista.setVisible(false);
         }
+        //Boton para ver el empleado mejor pago del mes-año seleccionado
         if(e.getSource() == this.vista.getjButton2()){
-            int a = this.cm.consultora.recorrerSueldosProg(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1);
-            int b = this.cm.consultora.recorrerSueldosAnal(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1);
-            if (this.cm.consultora.programadores.get(a).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1)>=this.cm.consultora.analistas.get(b).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1)) {
-                this.vista.getjTextField2().setText(this.cm.consultora.programadores.get(a).getNombre()+" sueldo: "+this.cm.consultora.programadores.get(a).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1));
+            int mes = this.vista.getjComboBox2().getSelectedIndex()-1;
+            int año = this.vista.getjComboBox3().getSelectedIndex()-1;
+            //devuelve la posicion donde esta el mayor sueldo de cada uno
+            int prog;
+            if(!this.cm.consultora.programadores.isEmpty()){
+            prog = this.cm.consultora.recorrerSueldosProg(mes,año);
             }else{
-                this.vista.getjTextField2().setText(this.cm.consultora.analistas.get(b).getNombre()+" sueldo: "+this.cm.consultora.analistas.get(b).getSueldoMes(this.vista.getjComboBox2().getSelectedIndex()-1,this.vista.getjComboBox3().getSelectedIndex()-1));
+                prog = 0;
             }
+            int anali;
+            if(!this.cm.consultora.analistas.isEmpty()){
+            anali = this.cm.consultora.recorrerSueldosAnal(mes,año);
+            }else{
+                anali = 0;
+            }
+            //si no hay empleados en programador y analistas
+            if(this.cm.consultora.programadores.isEmpty() && this.cm.consultora.analistas.isEmpty()){
+            this.vista.getjTextField2().setText("No hay empleados");
+            }
+            //si solo hay analistas
+            else if(this.cm.consultora.programadores.isEmpty()){
+                this.vista.getjTextField2().setText("Analista " + this.cm.consultora.analistas.get(anali).getNombre() + " Sueldo : " + this.cm.consultora.analistas.get(anali).getSueldoMes(mes,año));
+            }else if(this.cm.consultora.analistas.isEmpty()){
+                this.vista.getjTextField2().setText("Programador " + this.cm.consultora.programadores.get(prog).getNombre() + " Sueldo : " + this.cm.consultora.programadores.get(anali).getSueldoMes(mes,año));
+            }else{
+            //Funcion para devolver al mayor programador o analista segun la posicion conseguida antes
+                this.vista.getjTextField2().setText(this.cm.consultora.programadores.get(prog).getNombre() + this.cm.consultora.mayorSueldo(mes, año, anali, prog));
+            }
+            
         }
-        
+        //Boton para ver la suma de los sueldos en dos periodos
         if(e.getSource() == this.vista.getjButton3()){
-            
-            System.out.println("ANDO");
-            this.vista.getjTextField3().setText(Integer.toString(this.cm.consultora.sumatoriaSueldos(this.vista.getjComboBox4().getSelectedIndex()-1, this.vista.getjComboBox5().getSelectedIndex()-1, this.vista.getjComboBox6().getSelectedIndex()-1, this.vista.getjComboBox7().getSelectedIndex()-1)));
-            
+            int mes1 = this.vista.getjComboBox4().getSelectedIndex()-1;
+            int año1= this.vista.getjComboBox5().getSelectedIndex()-1;
+            int mes2 = this.vista.getjComboBox6().getSelectedIndex()-1;
+            int año2= this.vista.getjComboBox7().getSelectedIndex()-1;
+            this.vista.getjTextField3().setText(Integer.toString(this.cm.consultora.sumatoriaSueldos(mes1,año1,mes2,año2)));
         }
+        //Boton para poner el tiempo de trabajo total de un programador
         if(e.getSource() == this.vista.getjButton4()){
-            
             for (Programador prog : this.cm.consultora.programadores) {
-                if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem())) {
-                    
+                if (prog.getNombre().equals(this.vista.getjComboBox1().getSelectedItem())) {  
                 this.vista.getjTextField1().setText(Integer.toString(prog.getTiempoTrabajadoTotal()));
-            }
-            }
-            
+                }
+            }            
         }
-        if(e.getSource() == this.vista.getjTextField1()){
-          
-        }
-        if(e.getSource() == this.vista.getjComboBox1()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox2()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox3()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox4()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox5()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox6()){
-           
-        }
-        if(e.getSource() == this.vista.getjComboBox7()){
-           
-        }
+
     }
     
 }
