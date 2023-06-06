@@ -25,7 +25,7 @@ public class Conexion {
     public Conexion() {
 
     }
-
+    //La funcion conectar() abre la conexion con la base de datos
     public Connection conectar() {
         try {
             Class.forName(driver);
@@ -37,7 +37,7 @@ public class Conexion {
         }
         return cx;
     }
-
+    //Esta funcion cierra la conexion con la base de datos
     public void desconectar() {
         try {
             cx.close();
@@ -46,7 +46,8 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    //La funcion iniciar llena los arrays de clientes,programadores y analistas
+    //Asi se puede trabajar con las entidades que estan en la base de datos
     public void iniciar(ControladorMenu cm) {
         try {
             this.cx = this.conectar();
@@ -99,6 +100,7 @@ public class Conexion {
         }
     }
 
+    //Esta funcion rellena la matriz del sueldo de las entidades que la tienen en la base de datos
     public int[][] llenarSueldoProgramador(Programador programador) {
         int[][] sueldoProgramador = new int[12][3];
         try {
@@ -125,7 +127,7 @@ public class Conexion {
         }
         return sueldoProgramador;
     }
-
+    //Idem anterior
     public int[][] llenarSueldoAnalista(Analista analista) {
         int[][] sueldoAnalista = new int[12][3];
         try {
@@ -171,7 +173,7 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    //Se realiza un update para modificar el campo cliente del programador
     public void modificarClienteBD(Programador programador, Cliente cliente) {
 
         try {
@@ -188,7 +190,7 @@ public class Conexion {
             this.desconectar();
         }
     }
-
+    //Se realiza un update para modificar el campo precioHora del cliente
     public void modificarPrecioHoraBD(Cliente cliente, Integer precioHora) {
 
         try {
@@ -205,7 +207,7 @@ public class Conexion {
             this.desconectar();
         }
     }
-
+    //Se realiza un update para modificar el categoria de analista en la base de datos
     public void modificarCategoriaBD(Analista analista, String categoria) {
         try {
             this.cx = this.conectar();
@@ -221,7 +223,7 @@ public class Conexion {
             this.desconectar();
         }
     }
-
+    //Se obtiene el ultimo id de la base de datos +1 para setear el atributo al nuevo cliente a crear
     public int obtenerUltimoIdCliente() {
         int id = 0;
         try {
@@ -240,7 +242,7 @@ public class Conexion {
         }
         return id;
     }
-
+    //Idem anterior
     public int obtenerUltimoIdProgramador() {
         int id = 0;
         try {
@@ -259,7 +261,7 @@ public class Conexion {
         }
         return id;
     }
-
+    //Idem anterior
     public int obtenerUltimoIdAnalista() {
         int id = 0;
         try {
@@ -278,7 +280,7 @@ public class Conexion {
         }
         return id;
     }
-
+    //Agregamos el nuevo cliente con la sentencia insert into
     public void agregarClienteBD(Cliente cliente) {
         System.out.println("INSERT INTO cliente(`nombre`,`direccion`,`precioHora`) "
                 + "VALUES(\"" + cliente.getNombre()
@@ -300,7 +302,7 @@ public class Conexion {
         }
 
     }
-
+    //Agregamos el nuevo programador con la sentencia insert into
     public void agregarProgramadorBD(Programador programador) {
 
         try {
@@ -324,7 +326,7 @@ public class Conexion {
         }
 
     }
-
+    //Agregamos el nuevo analista con la sentencia insert into
     public void agregarAnalistaBD(Analista analista) {
 
         try {
@@ -348,7 +350,7 @@ public class Conexion {
         }
 
     }
-
+    //Se realiza una sentencia uodate para modificar el atributo de programador
     public void agregarHorasProgramadorBD(Programador programador, Integer horas) {
         try {
             this.cx = this.conectar();
@@ -364,7 +366,7 @@ public class Conexion {
             this.desconectar();
         }
     }
-
+    //Se realiza una sentencia uodate para modificar el atributo de programador
     public void agregarSueldoProgramadorBD(Programador programador, int mes, int anio, int sueldo) {
         String[] anios = {"2020", "2021", "2022"};
         String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
@@ -385,7 +387,7 @@ public class Conexion {
             this.desconectar();
         }
     }
-
+    //Se realiza una sentencia uodate para modificar el atributo de analista
     public void agregarSueldoAnalistaBD(Analista analista, int mes, int anio) {
         System.out.println("Entre en analista");
         String[] anios = {"2020", "2021", "2022"};
