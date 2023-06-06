@@ -41,7 +41,7 @@ public class ControladorCrearEmpleado implements ActionListener{
             this.vista.setVisible(false);
         }
         if(e.getSource() == this.vista.getjButton1()){
-            
+            //Guardar datos,si falta alguno manda mensaje de error
             if (!this.vista.getjTextField1().getText().isEmpty() && !this.vista.getjTextField2().getText().isEmpty() && !this.vista.getjTextField3().getText().isEmpty()){
                 if (this.vista.getjComboBox1().getSelectedItem().toString().equals("Programador")) {
                     programador.setId(cm.conexion.obtenerUltimoIdProgramador());
@@ -50,10 +50,7 @@ public class ControladorCrearEmpleado implements ActionListener{
                     programador.setNombre(this.vista.getjTextField3().getText());
                     this.cm.consultora.programadores.add(programador);
                     cm.conexion.agregarProgramadorBD(programador);
-                    //Salida por consola
-                    for (Programador pr : this.cm.consultora.programadores) {
-                        System.out.println(pr.getNombre());
-                    }
+                    JOptionPane.showMessageDialog(vista, "Datos Guardados");
                 }
                 if (this.vista.getjComboBox1().getSelectedItem().toString().equals("Analista")) {
                     analista.setId(cm.conexion.obtenerUltimoIdAnalista());
@@ -62,6 +59,7 @@ public class ControladorCrearEmpleado implements ActionListener{
                     analista.setNombre(this.vista.getjTextField3().getText());
                     this.cm.consultora.agregarAnalista(analista);
                     cm.conexion.agregarAnalistaBD(analista);
+                    JOptionPane.showMessageDialog(vista, "Datos Guardados");
                 }
             }else{
                 JOptionPane.showMessageDialog(vista, "Datos Vacios,volviendo al Menu");

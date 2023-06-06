@@ -13,9 +13,7 @@ public class Programador extends Empleado {
     private int id;
     
     private Cliente cliente = new Cliente();
-    
-    private int tiempoTrabajado=0;
-    
+        
     private int tiempoTrabajadoTotal=0;
     
     private int [][] sueldoMes = new int[12][3];
@@ -65,13 +63,6 @@ public class Programador extends Empleado {
         this.cliente = cliente;
     }
 
-    public int getTiempoTrabajado() {
-        return tiempoTrabajado;
-    }
-
-    public void setTiempoTrabajado(int tiempoTrabajado) {
-        this.tiempoTrabajado = tiempoTrabajado;
-    }
 
     public int getSueldoMes(int mes, int año) {
         return sueldoMes[mes][año];
@@ -84,10 +75,6 @@ public class Programador extends Empleado {
         this.sueldoMes[mes][año] = (int) (tiempo * this.cliente.getPrecioHora());
     }
 
-    @Override
-    public String toString() {
-        return "Programador{"+ super.toString() + " tiempo trabajado:"+tiempoTrabajado+"cliente=" + cliente +'}';
-    }
     
     public void aumentarHoras (int a){
         this.tiempoTrabajadoTotal+=a;

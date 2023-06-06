@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
-        <file>
-            <url>src/Controlador/ControladorOpcionCrear.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>15</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>src/Controlador/ControladorTerminarTrabajo.java</url>
-            <bookmark id="2">
-                <name/>
-                <line>64</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/Igna/OneDrive/Escritorio/ProyectoProgramacion/Programacion2/Consultora/src/Vista/Consultar.java</file>
-            <file>file:/C:/Users/Igna/OneDrive/Escritorio/ProyectoProgramacion/Programacion2/Consultora/src/Controlador/Consultora.java</file>
-            <file>file:/C:/Users/Igna/OneDrive/Escritorio/ProyectoProgramacion/Programacion2/Consultora/src/BD/Conexion.java</file>
+            <file>file:/C:/Programacion/UTN/Programacion2/Programacion2/Consultora/src/Controlador/ControladorMenu.java</file>
         </group>
-=======
-        <group/>
->>>>>>> cf168771ea799751a8210735eecd15a23a0b190d
     </open-files>
 </project-private>

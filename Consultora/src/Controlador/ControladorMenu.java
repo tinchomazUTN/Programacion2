@@ -48,7 +48,7 @@ public class ControladorMenu implements ActionListener {
     public ControladorTerminarTrabajo controladorTerminarTrabajo = new ControladorTerminarTrabajo(this);
 
     public ControladorMenu(Menu m,Conexion con) {
-        this.conexion=con;
+        //this.conexion=con;
         this.m = m;
         this.m.getjButton1().addActionListener(this);
         this.m.getjButton2().addActionListener(this);
@@ -66,9 +66,6 @@ public class ControladorMenu implements ActionListener {
             for (Programador pr : consultora.programadores) {
                 consultar.getjComboBox1().addItem(pr.getNombre());
             }
-          
-            
-            
             this.consultar.setVisible(true);
             this.m.setVisible(false);
         } else if (e.getSource() == m.getjButton2()) {

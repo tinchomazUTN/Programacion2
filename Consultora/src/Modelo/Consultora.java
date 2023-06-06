@@ -21,7 +21,8 @@ public class Consultora {
         analistas = new ArrayList<>();
         clientes = new ArrayList<>();
     }
-    
+    //Recorre los sueldos de todos los programadores en un mes y año en concreto
+    //devuelve la posicion donde se encuentra ese sueldo
     public int recorrerSueldosProg(int mes, int año){
         int mayorSueldoProg=0;
         int posicionProg=0;
@@ -29,13 +30,12 @@ public class Consultora {
             if (programadores.get(i).getSueldoMes(mes, año)>mayorSueldoProg){
                 mayorSueldoProg=programadores.get(i).getSueldoMes(mes, año);
                 posicionProg=i;
-            }
-            
+            }   
         }
-        
         return posicionProg;
         }
-    
+    //Recorre los sueldos de todos los analistas en un mes y año en concreto
+    //devuelve la posicion donde se encuentra ese sueldo
     public int recorrerSueldosAnal(int mes, int año){
         int mayorSueldoAnalista=0;
         int posicionAnal=0;
@@ -44,16 +44,23 @@ public class Consultora {
                 mayorSueldoAnalista=analistas.get(i).getSueldoMes(mes, año);
                 posicionAnal=i;
             }
-            
         }
-         
         return posicionAnal;
         }
-    
+    //Segun la posicion de un programador y un analista,en un mes y año
+    //devuelve cual es mas grande y cual es el sueldo.
+    public String mayorSueldo(int mes, int año,int posA,int posP){
+        int mayor=0;
+       posA=recorrerSueldosAnal( mes,año);
+       posP=recorrerSueldosProg( mes,año);
+        if ((analistas.get(posA).getSueldoMes(mes, año))>(programadores.get(posP).getSueldoMes(mes, año))) {
+            return "Analista " + analistas.get(posA).getNombre() + " Sueldo : " + analistas.get(posA).getSueldoMes(mes,año);
+        }else {
+           return "Programador " + analistas.get(posP).getNombre() + " Sueldo : " + analistas.get(posP).getSueldoMes(mes,año);}
+    }
+    //Suma todos los sueldos de los programadores y analistas en dos periodos de tiempos
     public int sumatoriaSueldos(int mes1, int año1, int mes2, int año2){
         int sumatoria=0;
-        
-
         if (año1==año2) {
             System.out.println("entre en año1==año2");
             for (int i = 0; i < this.programadores.size(); i++) {
@@ -70,7 +77,6 @@ public class Consultora {
                 }  
             }
         }
-        
         else if (año1<año2) {
             if (año2-año1==1) {
                  System.out.println("entre en año 2 - año1 ==1 ");
@@ -123,23 +129,10 @@ public class Consultora {
             }else {
                         System.out.println("no entre");
                         }
-            
         }
         return sumatoria;
     }
-    
-    public int meyorSueldo(int mes, int año){
-        int mayor=0;
-       int a=recorrerSueldosAnal( mes,año);
-       int b=recorrerSueldosProg( mes,año);
-        if (a>b) {
-            return a;
-        }else {
-        return b;}
- 
-    }
-    
-    
+    //Getters y Setters
    public ArrayList<Programador> getProgramadores() {
         return programadores;
     }
@@ -165,34 +158,11 @@ public class Consultora {
     public void setProgramadores(ArrayList<Programador> programadores) {
         this.programadores = programadores;
     }
-    
     public void setAnalistas(ArrayList<Analista> analistas) {
         this.analistas = analistas;
        
     }
-
     public void setClientes(ArrayList<Cliente> clientes) {
         this.clientes = clientes;
     }
-    
-   
-    public double liquidacionDesde( int mes1, int año1, int mes2, int año2) {
-        // nos ingresaran dos fechas, debemos recorrer los arrays de cobros de los programadores y 
-        //sumar todos los cobros entre esas dos fechas, 
-        //luego devolver la sumatoria de la plata que han cobrado los programadores entre esas dos fechas
-        return 1;
-    }
-    
-    public int horasTrabajadasEn(Programador programador) {
-        
-        return 1;
-    }
-    
-    public double empleadoMejorPago(int mes, int año) {
-         // nos ingresaran un mes y un año, debemos recorrer los arrays de sueldos de cada empleado }
-         //y devolver los que tienen un sueldo en ese mes y año, y de esos devolver cual es el mayor   
-        return 1;
-    }
-    
-    
 }
